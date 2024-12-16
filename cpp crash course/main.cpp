@@ -38,36 +38,22 @@ int main()
     // cout<<"a * b is "<<a * b<<endl;
     // cout<<"a / b is "<<(float) a / b<<endl;
 
-    int age;
-    cout << "Enter your Age: " <<endl;
-    cin >> age;
+    // int age;
+    // cout << "Enter your Age: " <<endl;
+    // cin >> age;
 
     // switch (age)
     // {
     // case 12:
-    //     cout << "You are 12 years old"<<endl;
+    //     cout << "You're 12 years old"<<endl;
     //     break;
     // case 18:
-    //     cout << "You are 18 years old"<<endl;
+    //     cout << "You're 18 years old"<<endl;
     //     break;
 
     // default:
-    //     cout << "You are neither 12 nor 18 years old";
-
+    //     cout<< "You're neither 12 nor 18 years old";
     // }
-
-    switch (age)
-    {
-    case 12:
-        cout << "You're 12 years old"<<endl;
-        break;
-    case 18:
-        cout << "You're 18 years old"<<endl;
-        break;
-
-    default:
-        cout<< "You're neither 12 nor 18 years old";
-    }
 
     // if(age>150 || age<1)
     // {
@@ -81,4 +67,22 @@ int main()
     // else{
     //     cout<<"You cannot vote";
     // }
+
+    int index = 0;
+    while(index<34)
+    {
+        cout<<"We're at index numbmer "<<index<<endl;
+        index = index + 1;
+    }
+
+    do
+    {
+        cout << "We are at index number " << index << endl;
+        index = index + 1;
+    } while (index < 33);
+
+    for (int i = 1; i <= 34; i++)
+    {
+        cout<<"The value of i is "<<i<<endl;
+    }
 }
