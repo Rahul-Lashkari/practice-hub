@@ -1,2 +1,2 @@
-# test-repo
- Hello World ~~
+# practice-hub
+Description: A collection of random practice files and coding exercises across various programming languages and topics, including crash courses, problem-solving, and exploratory scripts. Perfect for honing skills and experimenting with new concepts.
