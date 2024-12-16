@@ -42,16 +42,43 @@ int main()
     cout << "Enter your Age: " <<endl;
     cin >> age;
 
-    if(age>150 || age<1)
+    // switch (age)
+    // {
+    // case 12:
+    //     cout << "You are 12 years old"<<endl;
+    //     break;
+    // case 18:
+    //     cout << "You are 18 years old"<<endl;
+    //     break;
+
+    // default:
+    //     cout << "You are neither 12 nor 18 years old";
+
+    // }
+
+    switch (age)
     {
-        cout<<"Invalid Age!";
+    case 12:
+        cout << "You're 12 years old"<<endl;
+        break;
+    case 18:
+        cout << "You're 18 years old"<<endl;
+        break;
+
+    default:
+        cout<< "You're neither 12 nor 18 years old";
     }
 
-    else if (age>=18){
-        cout<<"You can vote";
-    }
+    // if(age>150 || age<1)
+    // {
+    //     cout<<"Invalid Age!";
+    // }
 
-    else{
-        cout<<"You cannot vote";
-    }
+    // else if (age>=18){
+    //     cout<<"You can vote";
+    // }
+
+    // else{
+    //     cout<<"You cannot vote";
+    // }
 }
