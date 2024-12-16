@@ -26,20 +26,32 @@ int main()
     // b = 34;
     // cout<<"The score is "<<score;
 
-    int a, b;
-    cout<<"Enter first number: "<<endl;
-    cin>>a;
+    // int a, b;
+    // cout<<"Enter first number: "<<endl;
+    // cin>>a;
 
-    cout<<"Enter second number: "<<endl;
-    cin>>b;
+    // cout<<"Enter second number: "<<endl;
+    // cin>>b;
 
     // cout<<"a + b is "<<a + b<<endl;
     // cout<<"a - b is "<<a - b<<endl;
     // cout<<"a * b is "<<a * b<<endl;
     // cout<<"a / b is "<<(float) a / b<<endl;
 
-    cout<<"a + b is "<<a + b<<endl;
-    cout<<"a - b is "<<a - b<<endl;
-    cout<<"a * b is "<<a * b<<endl;
-    cout<<"a / b is "<<(float) a / b<<endl;
+    int age;
+    cout << "Enter your Age: " <<endl;
+    cin >> age;
+
+    if(age>150 || age<1)
+    {
+        cout<<"Invalid Age!";
+    }
+
+    else if (age>=18){
+        cout<<"You can vote";
+    }
+
+    else{
+        cout<<"You cannot vote";
+    }
 }
