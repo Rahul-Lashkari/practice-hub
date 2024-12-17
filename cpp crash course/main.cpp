@@ -135,16 +135,24 @@ int main()
     //     {
     //         cout<<"The value at "<<i<<","<<j<<" is "<<arr2d[i][j]<<endl;
     //     }
-    // } -----
+    // }
 
-    int a =343;
-    float b = 87.94;
-    cout<<(float) a/34<<endl;
-
-    cout<<(int) b;
-
-    // int a = 343;
+    // int a =343;
     // float b = 87.94;
     // cout<<(float) a/34<<endl;
+
+    // cout<<(int) b; ---
+
+    // string name = "harry";
+    // cout<<"The name is "<<name<<endl;
+    // cout<<"The length of name is "<<name.length()<<endl;
+    // cout<<"The name is "<<name.substr(1,155)<<endl;
+    // cout<<"The name is "<<name.substr(2,3);
+
+    string name = "harry";
+    cout<<"The name is "<<name<<endl;
+    cout<<"The length of name is "<<name.length()<<endl;
+    cout<<"The name is "<<name.substr(1,155)<<endl;
+    cout<<"The name is "<<name.substr(2,2);
 
 }
