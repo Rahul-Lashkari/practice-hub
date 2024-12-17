@@ -10,6 +10,24 @@ int add(int a, int b)
     return c;
 }
 
+class Employee
+{
+public:
+    string name;
+    int salary;
+
+    Employee(string n, int s, int sp)
+    {
+        this->name = n;
+        this->salary = s;
+    }
+
+    void printDetails()
+    {
+        cout << "The name of our first employee is " << this->name << " and his salary is " << this->salary << " Dollars" << endl;
+    }
+};
+
 int main()
 {
     // cout<<"Hello World"<<endl;
@@ -149,12 +167,20 @@ int main()
     // cout<<"The name is "<<name.substr(1,155)<<endl;
     // cout<<"The name is "<<name.substr(2,2); ----
 
-    float a = 34.34;
-    float* ptra;
-    ptra = &a;
-    cout<<"The value of a is "<<a<<endl;
-    cout<<"The value of a is "<<*ptra<<endl;
-    cout<<"The address of a is "<<&a<<endl;
-    cout<<"The address of a is "<<ptra<<endl;
+    // float a = 34.34;
+    // float* ptra;
+    // ptra = &a;
+    // cout<<"The value of a is "<<a<<endl;
+    // cout<<"The value of a is "<<*ptra<<endl;
+    // cout<<"The address of a is "<<&a<<endl;
+    // cout<<"The address of a is "<<ptra<<endl;
+
+    Employee har("Harry constructor", 344, 324432);
+    har.name = "harry";
+    har.salary = 100;
+    har.printDetails();
+    // cout<<"The name of our first employee is "<< har.name << " and his salary is "<<har.salary<<" Dollars"<<endl;
+
+    return 0;
 
 }
