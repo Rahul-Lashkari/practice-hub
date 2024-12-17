@@ -147,12 +147,14 @@ int main()
     // cout<<"The name is "<<name<<endl;
     // cout<<"The length of name is "<<name.length()<<endl;
     // cout<<"The name is "<<name.substr(1,155)<<endl;
-    // cout<<"The name is "<<name.substr(2,3);
+    // cout<<"The name is "<<name.substr(2,2); ----
 
-    string name = "harry";
-    cout<<"The name is "<<name<<endl;
-    cout<<"The length of name is "<<name.length()<<endl;
-    cout<<"The name is "<<name.substr(1,155)<<endl;
-    cout<<"The name is "<<name.substr(2,2);
+    float a = 34.34;
+    float* ptra;
+    ptra = &a;
+    cout<<"The value of a is "<<a<<endl;
+    cout<<"The value of a is "<<*ptra<<endl;
+    cout<<"The address of a is "<<&a<<endl;
+    cout<<"The address of a is "<<ptra<<endl;
 
 }
