@@ -2,6 +2,14 @@
 #include <string>
 using namespace std;
 
+// f(x) = x^2 + 2
+int add(int a, int b)
+{
+    int c;
+    c = a+b;
+    return c;
+}
+
 int main()
 {
     // cout<<"Hello World"<<endl;
@@ -68,21 +76,30 @@ int main()
     //     cout<<"You cannot vote";
     // }
 
-    int index = 0;
-    while(index<34)
-    {
-        cout<<"We're at index numbmer "<<index<<endl;
-        index = index + 1;
-    }
+    // int index = 0;
+    // while(index<34)
+    // {
+    //     cout<<"We're at index numbmer "<<index<<endl;
+    //     index = index + 1;
+    // }
 
-    do
-    {
-        cout << "We are at index number " << index << endl;
-        index = index + 1;
-    } while (index < 33);
+    // do
+    // {
+    //     cout << "We are at index number " << index << endl;
+    //     index = index + 1;
+    // } while (index < 33);
 
-    for (int i = 1; i <= 34; i++)
-    {
-        cout<<"The value of i is "<<i<<endl;
-    }
+    // for (int i = 1; i <= 34; i++)
+    // {
+    //     cout<<"The value of i is "<<i<<endl;
+    // }
+
+    int a, b;
+    cout<<"Enter first number: "<<endl;
+    cin>>a;
+
+    cout<<"Enter Second number: "<<endl;
+    cin>>b;
+    cout<<"The function returned: "<<add(a,b);
+
 }
