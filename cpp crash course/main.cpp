@@ -101,23 +101,20 @@ int main()
     // cout<<"Enter Second number: "<<endl;
     // cin>>b;
     // cout<<"The function returned: "<<add(a,b);
+    
+    // int arr[] = {1,2,3};
+    // int marks[6];
 
-    // ---
-    //     int arr[] = {1, 3, 6};
-    // // Array Index   0  1  2
-    //     // cout<<arr[1];
-    //     int marks[6];
+    // for(int i=1; i<6; i++)
+    // {
+    //     cout<<"Enter the marks of "<<i<<"th student"<<endl;
+    //     cin>>marks[i];
+    // }
 
-    //     for (int i = 0; i < 6; i++)
-    //     {
-    //         cout<<"Enter the marks of "<<i<<"th student"<<endl;
-    //         cin>>marks[i];
-    //     }
-
-    //     for (int i = 0; i < 6; i++)
-    //     {
-    //         cout<<"Marks of "<<i<<"th student is "<<marks[i]<<endl;
-    //     }
+    // for(int i=1; i<6; i++)
+    // {
+    //     cout<<"Marks of "<<i<<"th student is "<<marks[i]<<endl;
+    // }
 
     // int arr2d[2][3] = {  {1,2,3},
     //                      {4,5,6}};
@@ -129,18 +126,14 @@ int main()
     //         cout<<"The value at "<<i<<","<<j<<" is "<<arr2d[i][j]<<endl;
     //     }
     // }
-    
-    int arr[] = {1,2,3};
-    int marks[6];
 
-    for(int i=1; i<6; i++)
-    {
-        cout<<"Enter the marks of "<<i<<"th student"<<endl;
-        cin>>marks[i];
-    }
+    int arr2d[2][3] = {  {1,2,3}, {4,5,6}};
 
-    for(int i=1; i<6; i++)
+    for( int i=0; i<2; i++)
     {
-        cout<<"Marks of "<<i<<"th student is "<<marks[i]<<endl;
+        for(int j =0; j<3; j++)
+        {
+            cout<<"The value at "<<i<<","<<j<<" is "<<arr2d[i][j]<<endl;
+        }
     }
 }
