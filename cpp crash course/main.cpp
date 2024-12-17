@@ -127,13 +127,24 @@ int main()
     //     }
     // }
 
-    int arr2d[2][3] = {  {1,2,3}, {4,5,6}};
+    // int arr2d[2][3] = {  {1,2,3}, {4,5,6}};
 
-    for( int i=0; i<2; i++)
-    {
-        for(int j =0; j<3; j++)
-        {
-            cout<<"The value at "<<i<<","<<j<<" is "<<arr2d[i][j]<<endl;
-        }
-    }
+    // for( int i=0; i<2; i++)
+    // {
+    //     for(int j =0; j<3; j++)
+    //     {
+    //         cout<<"The value at "<<i<<","<<j<<" is "<<arr2d[i][j]<<endl;
+    //     }
+    // } -----
+
+    int a =343;
+    float b = 87.94;
+    cout<<(float) a/34<<endl;
+
+    cout<<(int) b;
+
+    // int a = 343;
+    // float b = 87.94;
+    // cout<<(float) a/34<<endl;
+
 }
