@@ -37,6 +37,13 @@ private:
 
 };
 
+class Programmer : public Employee
+{
+    public:
+        int errors;
+        
+};
+
 int main()
 {
     // cout<<"Hello World"<<endl;
