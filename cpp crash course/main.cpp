@@ -72,6 +72,36 @@ bool isPrime(int n) {
     return true;
 }
 
+class BankAccount {
+private:
+    string owner;
+    double balance;
+
+public:
+    BankAccount(string name, double initialBalance) {
+        owner = name;
+        balance = initialBalance;
+    }
+
+    void deposit(double amount) {
+        balance += amount;
+        cout << "Deposited " << amount << ". New balance: " << balance << endl;
+    }
+
+    void withdraw(double amount) {
+        if (amount > balance) {
+            cout << "Insufficient balance!" << endl;
+        } else {
+            balance -= amount;
+            cout << "Withdrew " << amount << ". New balance: " << balance << endl;
+        }
+    }
+
+    void display() {
+        cout << "Account Holder: " << owner << ", Balance: " << balance << endl;
+    }
+};
+
 
 int main()
 {
@@ -241,14 +271,21 @@ int main()
     // cout << "Factorial of " << num << " is " << factorial(num) << endl;
     // return 0;
 
-    int num;
-    cout << "Enter a number: ";
-    cin >> num;
-    if (isPrime(num)) {
-        cout << num << " is a prime number." << endl;
-    } else {
-        cout << num << " is not a prime number." << endl;
-    }
+    // int num;
+    // cout << "Enter a number: ";
+    // cin >> num;
+    // if (isPrime(num)) {
+    //     cout << num << " is a prime number." << endl;
+    // } else {
+    //     cout << num << " is not a prime number." << endl;
+    // }
+    // return 0;
+
+    BankAccount account("John Doe", 1000.0);
+    account.display();
+    account.deposit(500.0);
+    account.withdraw(300.0);
+    account.withdraw(1500.0);
     return 0;
 
 }
