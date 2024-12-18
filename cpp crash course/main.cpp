@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <stack>
 using namespace std;
 
 // f(x) = x^2 + 2
@@ -43,6 +44,18 @@ class Programmer : public Employee
         int errors;
         
 };
+
+void reverseString(string str) {
+    stack<char> s;
+    for (char ch : str) {
+        s.push(ch);
+    }
+    while (!s.empty()) {
+        cout << s.top();
+        s.pop();
+    }
+    cout << endl;
+}
 
 int main()
 {
@@ -191,14 +204,18 @@ int main()
     // cout<<"The address of a is "<<&a<<endl;
     // cout<<"The address of a is "<<ptra<<endl;
 
-    Employee har("Harry constructor", 344, 324432);
-    har.name = "harry";
-    har.salary = 100;
-    har.printDetails();
-    har.getSecretPassword();
+    // Employee har("Harry constructor", 344, 324432);
+    // har.name = "harry";
+    // har.salary = 100;
+    // har.printDetails();
+    // har.getSecretPassword();
     // cout<<har.secretPassword;
     // cout<<"The name of our first employee is "<< har.name << " and his salary is "<<har.salary<<" Dollars"<<endl;
 
+    // return 0;
+
+    string str = "Hello, World!";
+    reverseString(str);
     return 0;
 
 }
