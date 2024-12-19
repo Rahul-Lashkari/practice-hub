@@ -115,6 +115,23 @@ void findMinMax(int arr[], int size) {
     cout << "Minimum: " << min << ", Maximum: " << max << endl;
 }
 
+void addMatrices(int a[2][2], int b[2][2], int result[2][2]) {
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 2; ++j) {
+            result[i][j] = a[i][j] + b[i][j];
+        }
+    }
+}
+
+void displayMatrix(int matrix[2][2]) {
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 2; ++j) {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
 int main()
 {
     // cout<<"Hello World"<<endl;
@@ -300,9 +317,20 @@ int main()
     // account.withdraw(1500.0);
     // return 0;
 
-    int arr[] = {34, 78, 12, 89, 23, 45};
-    int size = sizeof(arr) / sizeof(arr[0]);
-    findMinMax(arr, size);
+    // int arr[] = {34, 78, 12, 89, 23, 45};
+    // int size = sizeof(arr) / sizeof(arr[0]);
+    // findMinMax(arr, size);
+    // return 0;
+
+    int matrix1[2][2] = {{1, 2}, {3, 4}};
+    int matrix2[2][2] = {{5, 6}, {7, 8}};
+    int result[2][2];
+
+    addMatrices(matrix1, matrix2, result);
+
+    cout << "Resultant Matrix: " << endl;
+    displayMatrix(result);
+
     return 0;
 
 }
