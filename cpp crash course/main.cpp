@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <stack>
+#include <limits>
 using namespace std;
 
 // f(x) = x^2 + 2
@@ -102,6 +103,17 @@ public:
     }
 };
 
+void findMinMax(int arr[], int size) {
+    int min = numeric_limits<int>::max();
+    int max = numeric_limits<int>::min();
+
+    for (int i = 0; i < size; ++i) {
+        if (arr[i] < min) min = arr[i];
+        if (arr[i] > max) max = arr[i];
+    }
+
+    cout << "Minimum: " << min << ", Maximum: " << max << endl;
+}
 
 int main()
 {
@@ -281,11 +293,16 @@ int main()
     // }
     // return 0;
 
-    BankAccount account("John Doe", 1000.0);
-    account.display();
-    account.deposit(500.0);
-    account.withdraw(300.0);
-    account.withdraw(1500.0);
+    // BankAccount account("John Doe", 1000.0);
+    // account.display();
+    // account.deposit(500.0);
+    // account.withdraw(300.0);
+    // account.withdraw(1500.0);
+    // return 0;
+
+    int arr[] = {34, 78, 12, 89, 23, 45};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    findMinMax(arr, size);
     return 0;
 
 }
