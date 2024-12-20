@@ -322,15 +322,25 @@ int main()
     // findMinMax(arr, size);
     // return 0;
 
-    int matrix1[2][2] = {{1, 2}, {3, 4}};
-    int matrix2[2][2] = {{5, 6}, {7, 8}};
-    int result[2][2];
+    // int matrix1[2][2] = {{1, 2}, {3, 4}};
+    // int matrix2[2][2] = {{5, 6}, {7, 8}};
+    // int result[2][2];
 
-    addMatrices(matrix1, matrix2, result);
+    // addMatrices(matrix1, matrix2, result);
 
-    cout << "Resultant Matrix: " << endl;
-    displayMatrix(result);
+    // cout << "Resultant Matrix: " << endl;
+    // displayMatrix(result);
 
+    // return 0;
+
+    int length, width;
+    cout << "Enter length of the rectangle: ";
+    cin >> length;
+    cout << "Enter width of the rectangle: ";
+    cin >> width;
+
+    int area = length * width;
+    cout << "Area of the rectangle: " << area << endl;
     return 0;
 
 }
