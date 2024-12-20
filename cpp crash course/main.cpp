@@ -333,14 +333,29 @@ int main()
 
     // return 0;
 
-    int length, width;
-    cout << "Enter length of the rectangle: ";
-    cin >> length;
-    cout << "Enter width of the rectangle: ";
-    cin >> width;
+    // int length, width;
+    // cout << "Enter length of the rectangle: ";
+    // cin >> length;
+    // cout << "Enter width of the rectangle: ";
+    // cin >> width;
 
-    int area = length * width;
-    cout << "Area of the rectangle: " << area << endl;
+    // int area = length * width;
+    // cout << "Area of the rectangle: " << area << endl;
+    // return 0;
+
+    int num1, num2;
+    cout << "Enter the first number: ";
+    cin >> num1;
+    cout << "Enter the second number: ";
+    cin >> num2;
+
+    if (num1 > num2) {
+        cout << num1 << " is larger." << endl;
+    } else if (num2 > num1) {
+        cout << num2 << " is larger." << endl;
+    } else {
+        cout << "Both numbers are equal." << endl;
+    }
     return 0;
 
 }
