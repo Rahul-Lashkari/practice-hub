@@ -358,15 +358,26 @@ int main()
     // }
     // return 0;
 
-    int n, sum = 0;
-    cout << "Enter a positive integer: ";
-    cin >> n;
+    // int n, sum = 0;
+    // cout << "Enter a positive integer: ";
+    // cin >> n;
 
-    for (int i = 1; i <= n; ++i) {
-        sum += i;
+    // for (int i = 1; i <= n; ++i) {
+    //     sum += i;
+    // }
+
+    // cout << "Sum of first " << n << " natural numbers is: " << sum << endl;
+    // return 0;
+
+    int number;
+    cout << "Enter a number: ";
+    cin >> number;
+
+    cout << "Multiplication Table of " << number << ":" << endl;
+    for (int i = 1; i <= 10; ++i) {
+        cout << number << " x " << i << " = " << number * i << endl;
     }
 
-    cout << "Sum of first " << n << " natural numbers is: " << sum << endl;
     return 0;
 
 }
