@@ -369,13 +369,25 @@ int main()
     // cout << "Sum of first " << n << " natural numbers is: " << sum << endl;
     // return 0;
 
+    // int number;
+    // cout << "Enter a number: ";
+    // cin >> number;
+
+    // cout << "Multiplication Table of " << number << ":" << endl;
+    // for (int i = 1; i <= 10; ++i) {
+    //     cout << number << " x " << i << " = " << number * i << endl;
+    // }
+
+    // return 0;
+
     int number;
-    cout << "Enter a number: ";
+    cout << "Enter an integer: ";
     cin >> number;
 
-    cout << "Multiplication Table of " << number << ":" << endl;
-    for (int i = 1; i <= 10; ++i) {
-        cout << number << " x " << i << " = " << number * i << endl;
+    if (number % 2 == 0) {
+        cout << number << " is even." << endl;
+    } else {
+        cout << number << " is odd." << endl;
     }
 
     return 0;
