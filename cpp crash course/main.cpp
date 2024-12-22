@@ -392,19 +392,32 @@ int main()
 
     // return 0;
 
-    int num1, num2, num3;
-    cout << "Enter three numbers: ";
-    cin >> num1 >> num2 >> num3;
+    // int num1, num2, num3;
+    // cout << "Enter three numbers: ";
+    // cin >> num1 >> num2 >> num3;
 
-    int largest;
-    if (num1 >= num2 && num1 >= num3)
-        largest = num1;
-    else if (num2 >= num1 && num2 >= num3)
-        largest = num2;
-    else
-        largest = num3;
+    // int largest;
+    // if (num1 >= num2 && num1 >= num3)
+    //     largest = num1;
+    // else if (num2 >= num1 && num2 >= num3)
+    //     largest = num2;
+    // else
+    //     largest = num3;
 
-    cout << "The largest number is: " << largest << endl;
+    // cout << "The largest number is: " << largest << endl;
+    // return 0;
+
+    int number, reverse = 0, remainder;
+    cout << "Enter an integer: ";
+    cin >> number;
+
+    while (number != 0) {
+        remainder = number % 10;
+        reverse = reverse * 10 + remainder;
+        number /= 10;
+    }
+
+    cout << "Reversed number: " << reverse << endl;
     return 0;
 
 }
