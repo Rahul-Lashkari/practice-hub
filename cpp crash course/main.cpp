@@ -380,16 +380,31 @@ int main()
 
     // return 0;
 
-    int number;
-    cout << "Enter an integer: ";
-    cin >> number;
+    // int number;
+    // cout << "Enter an integer: ";
+    // cin >> number;
 
-    if (number % 2 == 0) {
-        cout << number << " is even." << endl;
-    } else {
-        cout << number << " is odd." << endl;
-    }
+    // if (number % 2 == 0) {
+    //     cout << number << " is even." << endl;
+    // } else {
+    //     cout << number << " is odd." << endl;
+    // }
 
+    // return 0;
+
+    int num1, num2, num3;
+    cout << "Enter three numbers: ";
+    cin >> num1 >> num2 >> num3;
+
+    int largest;
+    if (num1 >= num2 && num1 >= num3)
+        largest = num1;
+    else if (num2 >= num1 && num2 >= num3)
+        largest = num2;
+    else
+        largest = num3;
+
+    cout << "The largest number is: " << largest << endl;
     return 0;
 
 }
