@@ -2,6 +2,7 @@
 #include <string>
 #include <stack>
 #include <limits>
+#include <cctype>
 using namespace std;
 
 // f(x) = x^2 + 2
@@ -457,41 +458,61 @@ int main()
 
     // return 0;
 
-    int rows, cols;
-    cout << "Enter number of rows and columns: ";
-    cin >> rows >> cols;
+    // int rows, cols;
+    // cout << "Enter number of rows and columns: ";
+    // cin >> rows >> cols;
 
-    int matrix1[10][10], matrix2[10][10], result[10][10];
+    // int matrix1[10][10], matrix2[10][10], result[10][10];
 
-    cout << "Enter elements of first matrix:\n";
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            cin >> matrix1[i][j];
+    // cout << "Enter elements of first matrix:\n";
+    // for (int i = 0; i < rows; i++) {
+    //     for (int j = 0; j < cols; j++) {
+    //         cin >> matrix1[i][j];
+    //     }
+    // }
+
+    // cout << "Enter elements of second matrix:\n";
+    // for (int i = 0; i < rows; i++) {
+    //     for (int j = 0; j < cols; j++) {
+    //         cin >> matrix2[i][j];
+    //     }
+    // }
+
+    // // Adding matrices
+    // for (int i = 0; i < rows; i++) {
+    //     for (int j = 0; j < cols; j++) {
+    //         result[i][j] = matrix1[i][j] + matrix2[i][j];
+    //     }
+    // }
+
+    // cout << "Resultant Matrix:\n";
+    // for (int i = 0; i < rows; i++) {
+    //     for (int j = 0; j < cols; j++) {
+    //         cout << result[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
+
+    // return 0;
+
+    string str;
+    cout << "Enter a string: ";
+    cin.ignore();  // To clear input buffer
+    getline(cin, str);
+
+    int vowels = 0, consonants = 0;
+    for (char ch : str) {
+        if (isalpha(ch)) {
+            char lower = tolower(ch);
+            if (lower == 'a' || lower == 'e' || lower == 'i' || lower == 'o' || lower == 'u') {
+                vowels++;
+            } else {
+                consonants++;
+            }
         }
     }
 
-    cout << "Enter elements of second matrix:\n";
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            cin >> matrix2[i][j];
-        }
-    }
-
-    // Adding matrices
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            result[i][j] = matrix1[i][j] + matrix2[i][j];
-        }
-    }
-
-    cout << "Resultant Matrix:\n";
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            cout << result[i][j] << " ";
-        }
-        cout << endl;
-    }
-
+    cout << "Vowels: " << vowels << ", Consonants: " << consonants << endl;
     return 0;
 
 }
