@@ -445,15 +445,52 @@ int main()
 
     // return 0;
 
-    int n;
-    cout << "Enter a number: ";
-    cin >> n;
+    // int n;
+    // cout << "Enter a number: ";
+    // cin >> n;
 
-    cout << "Prime numbers up to " << n << " are: ";
-    for (int i = 2; i <= n; i++) {
-        if (isPrime1(i)) cout << i << " ";
+    // cout << "Prime numbers up to " << n << " are: ";
+    // for (int i = 2; i <= n; i++) {
+    //     if (isPrime1(i)) cout << i << " ";
+    // }
+    // cout << endl;
+
+    // return 0;
+
+    int rows, cols;
+    cout << "Enter number of rows and columns: ";
+    cin >> rows >> cols;
+
+    int matrix1[10][10], matrix2[10][10], result[10][10];
+
+    cout << "Enter elements of first matrix:\n";
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cin >> matrix1[i][j];
+        }
     }
-    cout << endl;
+
+    cout << "Enter elements of second matrix:\n";
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cin >> matrix2[i][j];
+        }
+    }
+
+    // Adding matrices
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            result[i][j] = matrix1[i][j] + matrix2[i][j];
+        }
+    }
+
+    cout << "Resultant Matrix:\n";
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cout << result[i][j] << " ";
+        }
+        cout << endl;
+    }
 
     return 0;
 
