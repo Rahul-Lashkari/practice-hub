@@ -132,6 +132,14 @@ void displayMatrix(int matrix[2][2]) {
     }
 }
 
+bool isPrime1(int num) {
+    if (num <= 1) return false;
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) return false;
+    }
+    return true;
+}
+
 int main()
 {
     // cout<<"Hello World"<<endl;
@@ -420,20 +428,32 @@ int main()
     // cout << "Reversed number: " << reverse << endl;
     // return 0;
 
-    int n;
-    unsigned long long factorial = 1;
+    // int n;
+    // unsigned long long factorial = 1;
 
-    cout << "Enter a positive integer: ";
+    // cout << "Enter a positive integer: ";
+    // cin >> n;
+
+    // if (n < 0) {
+    //     cout << "Factorial is not defined for negative numbers." << endl;
+    // } else {
+    //     for (int i = 1; i <= n; ++i) {
+    //         factorial *= i;
+    //     }
+    //     cout << "Factorial of " << n << " is: " << factorial << endl;
+    // }
+
+    // return 0;
+
+    int n;
+    cout << "Enter a number: ";
     cin >> n;
 
-    if (n < 0) {
-        cout << "Factorial is not defined for negative numbers." << endl;
-    } else {
-        for (int i = 1; i <= n; ++i) {
-            factorial *= i;
-        }
-        cout << "Factorial of " << n << " is: " << factorial << endl;
+    cout << "Prime numbers up to " << n << " are: ";
+    for (int i = 2; i <= n; i++) {
+        if (isPrime1(i)) cout << i << " ";
     }
+    cout << endl;
 
     return 0;
 
