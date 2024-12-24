@@ -515,24 +515,42 @@ int main()
     // cout << "Vowels: " << vowels << ", Consonants: " << consonants << endl;
     // return 0;
 
+    // int n;
+    // cout << "Enter the number of elements in the array: ";
+    // cin >> n;
+
+    // int arr[100];
+    // cout << "Enter the elements of the array:\n";
+    // for (int i = 0; i < n; i++) {
+    //     cin >> arr[i];
+    // }
+
+    // int maxElement = arr[0];
+    // for (int i = 1; i < n; i++) {
+    //     if (arr[i] > maxElement) {
+    //         maxElement = arr[i];
+    //     }
+    // }
+
+    // cout << "The maximum element in the array is: " << maxElement << endl;
+    // return 0;
+
     int n;
     cout << "Enter the number of elements in the array: ";
     cin >> n;
 
-    int arr[100];
+    int arr[100], evenCount = 0, oddCount = 0;
     cout << "Enter the elements of the array:\n";
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
+        if (arr[i] % 2 == 0)
+            evenCount++;
+        else
+            oddCount++;
     }
 
-    int maxElement = arr[0];
-    for (int i = 1; i < n; i++) {
-        if (arr[i] > maxElement) {
-            maxElement = arr[i];
-        }
-    }
-
-    cout << "The maximum element in the array is: " << maxElement << endl;
+    cout << "Number of even elements: " << evenCount << endl;
+    cout << "Number of odd elements: " << oddCount << endl;
     return 0;
 
 
