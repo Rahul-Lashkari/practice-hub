@@ -495,24 +495,45 @@ int main()
 
     // return 0;
 
-    string str;
-    cout << "Enter a string: ";
-    cin.ignore();  // To clear input buffer
-    getline(cin, str);
+    // string str;
+    // cout << "Enter a string: ";
+    // cin.ignore();  // To clear input buffer
+    // getline(cin, str);
 
-    int vowels = 0, consonants = 0;
-    for (char ch : str) {
-        if (isalpha(ch)) {
-            char lower = tolower(ch);
-            if (lower == 'a' || lower == 'e' || lower == 'i' || lower == 'o' || lower == 'u') {
-                vowels++;
-            } else {
-                consonants++;
-            }
+    // int vowels = 0, consonants = 0;
+    // for (char ch : str) {
+    //     if (isalpha(ch)) {
+    //         char lower = tolower(ch);
+    //         if (lower == 'a' || lower == 'e' || lower == 'i' || lower == 'o' || lower == 'u') {
+    //             vowels++;
+    //         } else {
+    //             consonants++;
+    //         }
+    //     }
+    // }
+
+    // cout << "Vowels: " << vowels << ", Consonants: " << consonants << endl;
+    // return 0;
+
+    int n;
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
+
+    int arr[100];
+    cout << "Enter the elements of the array:\n";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    int maxElement = arr[0];
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > maxElement) {
+            maxElement = arr[i];
         }
     }
 
-    cout << "Vowels: " << vowels << ", Consonants: " << consonants << endl;
+    cout << "The maximum element in the array is: " << maxElement << endl;
     return 0;
+
 
 }
