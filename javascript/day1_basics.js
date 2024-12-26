@@ -28,7 +28,6 @@ let person = { firstName: "Alice", lastName: "Doe", age: 30 }; // Object
 
 console.log(message, count, isValid, colors, person);
 --------------------------------------------------------------------------------------------------------------
-*/
 // Step 3: Functions :-
 
 // A function that adds two numbers
@@ -37,3 +36,17 @@ function addNumbers(a, b) {
   }
   
   console.log("Sum:", addNumbers(5, 10));
+--------------------------------------------------------------------------------------------------------------
+*/
+// Step 4: Basic Conditional Statements :-
+
+// Check if a number is positive, negative, or zero
+let number = 10;
+
+if (number > 0) {
+  console.log("The number is positive.");
+} else if (number < 0) {
+  console.log("The number is negative.");
+} else {
+  console.log("The number is zero.");
+}
