@@ -37,7 +37,6 @@ function addNumbers(a, b) {
   
   console.log("Sum:", addNumbers(5, 10));
 --------------------------------------------------------------------------------------------------------------
-*/
 // Step 4: Basic Conditional Statements :-
 
 // Check if a number is positive, negative, or zero
@@ -50,3 +49,12 @@ if (number > 0) {
 } else {
   console.log("The number is zero.");
 }
+--------------------------------------------------------------------------------------------------------------
+*/
+// Step 5: Loops :-
+
+// Print numbers from 1 to 5 using a for loop
+for (let i = 1; i <= 5; i++) {
+    console.log("Number:", i);
+  }
+  
