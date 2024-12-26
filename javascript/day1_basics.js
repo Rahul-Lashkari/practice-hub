@@ -17,8 +17,9 @@ console.log("Age:", age);
 age = 26;
 console.log("Updated Age:", age);
 --------------------------------------------------------------------------------------------------------------
-*/
-// Examples of data types
+// Step 2: Data Types :-
+
+// Examples of data types :-
 let message = "Hello, World!"; // String
 let count = 42; // Number
 let isValid = true; // Boolean
@@ -26,3 +27,13 @@ let colors = ["Red", "Green", "Blue"]; // Array
 let person = { firstName: "Alice", lastName: "Doe", age: 30 }; // Object
 
 console.log(message, count, isValid, colors, person);
+--------------------------------------------------------------------------------------------------------------
+*/
+// Step 3: Functions :-
+
+// A function that adds two numbers
+function addNumbers(a, b) {
+    return a + b;
+  }
+  
+  console.log("Sum:", addNumbers(5, 10));
