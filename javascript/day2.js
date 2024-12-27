@@ -47,7 +47,6 @@ switch (number) {
     console.log("Number is neither five nor ten");
 }
 --------------------------------------------------------------------------------------------------------------
-*/
 // Loops - Write a script using for, while, and do...while loops to print numbers 1 to 10. Use break to stop at 5 and continue to skip even numbers.
 // Loops
 console.log("Using for loop:");
@@ -70,3 +69,17 @@ do {
   console.log(i);
   i++;
 } while (i <= 10);
+--------------------------------------------------------------------------------------------------------------
+*/
+// Functions - i] Write a script with: A function to calculate the factorial of a number using recursion. & ii] An arrow function to calculate the square of a number.
+// Functions
+function factorial(n) {
+    if (n === 0 || n === 1) return 1;
+    return n * factorial(n - 1);
+  }
+  
+  console.log("Factorial of 5:", factorial(5));
+  
+  const square = (num) => num * num;
+  console.log("Square of 4:", square(4));
+  
