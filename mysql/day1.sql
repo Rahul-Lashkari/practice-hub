@@ -14,3 +14,12 @@ CREATE TABLE students (
     grade VARCHAR(10)
 );
 
+-- --------------------------------------------------------------------------------------------------------------
+
+-- Step 3: Insert Data
+INSERT INTO students (name, age, grade)
+VALUES
+    ('Alice', 14, '8th'),
+    ('Bob', 15, '9th'),
+    ('Charlie', 13, '7th'),
+    ('Diana', 14, '8th');
