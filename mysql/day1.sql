@@ -23,3 +23,9 @@ VALUES
     ('Bob', 15, '9th'),
     ('Charlie', 13, '7th'),
     ('Diana', 14, '8th');
+
+-- --------------------------------------------------------------------------------------------------------------
+
+-- Step 4: Basic SELECT Queries
+SELECT * FROM students;
+SELECT name, grade FROM students;
