@@ -23,7 +23,6 @@ console.log("Multiplication:", num1 * num2);
 console.log("Division:", num1 / num2);
 console.log("Modulus:", num1 % num2);
 --------------------------------------------------------------------------------------------------------------
-*/
 // Conditional Statements
 // Conditionals
 let number = -10;
@@ -47,3 +46,27 @@ switch (number) {
   default:
     console.log("Number is neither five nor ten");
 }
+--------------------------------------------------------------------------------------------------------------
+*/
+// Loops - Write a script using for, while, and do...while loops to print numbers 1 to 10. Use break to stop at 5 and continue to skip even numbers.
+// Loops
+console.log("Using for loop:");
+for (let i = 1; i <= 10; i++) {
+  if (i % 2 === 0) continue; // Skip even numbers
+  if (i > 5) break; // Stop at 5
+  console.log(i);
+}
+
+console.log("Using while loop:");
+let i = 1;
+while (i <= 10) {
+  console.log(i);
+  i++;
+}
+
+console.log("Using do...while loop:");
+i = 1;
+do {
+  console.log(i);
+  i++;
+} while (i <= 10);
