@@ -29,3 +29,9 @@ VALUES
 -- Step 4: Basic SELECT Queries
 SELECT * FROM students;
 SELECT name, grade FROM students;
+
+-- --------------------------------------------------------------------------------------------------------------
+
+-- Step 5: Filtered SELECT Queries
+SELECT * FROM students WHERE grade = '8th';
+SELECT * FROM students WHERE age > 14;
