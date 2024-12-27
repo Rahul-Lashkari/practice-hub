@@ -45,7 +45,7 @@ Each day's practice is stored in a separate `.sql` file:
 
 ---
 
-## 🧠 GitGen: The Commit Wizard
+## 💾 GitGen: The Commit Wizard
 GitGen was used for streamlined version control. I created this AI-powered prompt to generate professional and concise commit messages tailored to the specific context of each file or change. It's a powerful tool that saves time and ensures clarity in versioning.
 
 ---
