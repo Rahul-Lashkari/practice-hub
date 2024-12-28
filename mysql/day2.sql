@@ -42,3 +42,12 @@ ALTER TABLE students MODIFY email VARCHAR(100) NOT NULL;
 
 -- Add UNIQUE constraint to courses' course_name column
 ALTER TABLE courses ADD UNIQUE (course_name);
+
+-- --------------------------------------------------------------------------------------------------------------
+
+-- Practice DELETE with Conditions
+-- Delete a course with a specific name
+DELETE FROM courses WHERE course_name = 'Cybersecurity';
+
+-- Delete students without a course assigned
+DELETE FROM students WHERE course_id IS NULL;
