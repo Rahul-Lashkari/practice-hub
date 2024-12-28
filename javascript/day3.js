@@ -24,7 +24,6 @@ const age = 25;
 
 console.log(`My name is ${name} and I am ${age} years old.`);
 --------------------------------------------------------------------------------------------------------------
-*/
 // Rest Operator
 function sum(...numbers) {
     return numbers.reduce((total, num) => total + num, 0);
@@ -37,3 +36,18 @@ const arr1 = [1, 2, 3];
 const arr2 = [...arr1, 4, 5];
 
 console.log(arr2); // Outputs: [1, 2, 3, 4, 5]
+--------------------------------------------------------------------------------------------------------------
+*/
+// Array Destructuring
+const colors = ["red", "green", "blue"];
+const [primary, secondary] = colors;
+
+console.log(primary); // Outputs: red
+console.log(secondary); // Outputs: green
+
+// Object Destructuring
+const person = { firstName: "John", lastName: "Doe", age: 30 };
+const { firstName, age } = person;
+
+console.log(firstName); // Outputs: John
+console.log(age); // Outputs: 30
