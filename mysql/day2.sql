@@ -33,3 +33,12 @@ UPDATE students SET course_id = 2 WHERE id IN (3, 4);
 SELECT students.name, courses.course_name
 FROM students
 JOIN courses ON students.course_id = courses.course_id;
+
+-- --------------------------------------------------------------------------------------------------------------
+
+-- Add Constraints
+-- Add NOT NULL constraint to students' email column
+ALTER TABLE students MODIFY email VARCHAR(100) NOT NULL;
+
+-- Add UNIQUE constraint to courses' course_name column
+ALTER TABLE courses ADD UNIQUE (course_name);
