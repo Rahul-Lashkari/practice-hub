@@ -32,3 +32,12 @@ SELECT * FROM students;
 */
 -- --------------------------------------------------------------------------------------------------------------
 
+-- Conditional Updates with WHERE
+-- Update all students with grade 'C' to grade 'B'
+UPDATE students
+SET grade = 'B'
+WHERE grade = 'C';
+
+-- Check the updated data
+SELECT * FROM students;
+-- --------------------------------------------------------------------------------------------------------------
