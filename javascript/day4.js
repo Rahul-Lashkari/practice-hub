@@ -37,7 +37,6 @@ console.log(fruits);
 fruits.pop();
 console.log(fruits);
 --------------------------------------------------------------------------------------------------------------
-*/
 // Iterating Over Arrays
 let fruits = ["Apple", "Banana", "Cherry"];
 console.log(fruits);
@@ -50,3 +49,15 @@ for (let i = 0; i < fruits.length; i++) {
 fruits.forEach((fruit) => {
     console.log(fruit);
 });
+--------------------------------------------------------------------------------------------------------------
+*/
+// Advanced Array Methods
+let fruits = ["Apple", "Banana", "Cherry"];
+console.log(fruits);
+// Using map
+let lengths = fruits.map(fruit => fruit.length);
+console.log(lengths); // Output: [5, 6, 6]
+
+// Using filter
+let shortNames = fruits.filter(fruit => fruit.length <= 5);
+console.log(shortNames); // Output: ["Apple"]
