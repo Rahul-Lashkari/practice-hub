@@ -64,3 +64,30 @@ TRUNCATE TABLE students;
 SELECT * FROM students;
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Combining Insert, Update, and Delete
+-- Re-insert some sample data
+INSERT INTO students (name, age, grade)
+VALUES 
+('Charlie', 21, 'B'),
+('Eve', 22, 'A');
+
+-- Update Charlie's grade to A
+UPDATE students
+SET grade = 'A'
+WHERE name = 'Charlie';
+
+-- Delete Eve's data
+DELETE FROM students
+WHERE name = 'Eve';
+
+-- View final data
+SELECT * FROM students;
+/*
++----+---------+-----+-------+-----------+
+| id | name    | age | grade | course_id |
++----+---------+-----+-------+-----------+
+|  1 | Charlie |  21 | A     |      NULL |
++----+---------+-----+-------+-----------+
+*/
+-- --------------------------------------------------------------------------------------------------------------
