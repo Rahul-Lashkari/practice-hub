@@ -41,3 +41,17 @@ WHERE grade = 'C';
 -- Check the updated data
 SELECT * FROM students;
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Deleting Data
+-- Delete a specific student by name
+DELETE FROM students
+WHERE name = 'John';
+
+-- Delete all students with grade 'D'
+DELETE FROM students
+WHERE grade = 'D';
+
+-- Check remaining data
+SELECT * FROM students;
+
+-- --------------------------------------------------------------------------------------------------------------
