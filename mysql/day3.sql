@@ -55,3 +55,12 @@ WHERE grade = 'D';
 SELECT * FROM students;
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Deleting All Data (Truncate Table)
+-- Warning: This deletes all data but keeps the table structure intact
+TRUNCATE TABLE students;
+
+-- Verify table is empty
+SELECT * FROM students;
+
+-- --------------------------------------------------------------------------------------------------------------
