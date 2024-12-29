@@ -50,7 +50,6 @@ fruits.forEach((fruit) => {
     console.log(fruit);
 });
 --------------------------------------------------------------------------------------------------------------
-*/
 // Advanced Array Methods
 let fruits = ["Apple", "Banana", "Cherry"];
 console.log(fruits);
@@ -61,3 +60,13 @@ console.log(lengths); // Output: [5, 6, 6]
 // Using filter
 let shortNames = fruits.filter(fruit => fruit.length <= 5);
 console.log(shortNames); // Output: ["Apple"]
+--------------------------------------------------------------------------------------------------------------
+*/
+// Combining Functions and Arrays
+let fruits = ["Apple", "Banana", "Cherry"];
+console.log(fruits);
+// Function to filter fruits based on length
+const filterFruits = (arr, maxLength) => {
+    return arr.filter(fruit => fruit.length <= maxLength);
+};
+console.log(filterFruits(fruits, 5)); // Output: ["Apple"]
