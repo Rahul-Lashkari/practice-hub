@@ -28,7 +28,6 @@ function calculateArea(length, width = 5) {
 console.log("Area:", calculateArea(10)); // Default width is 5
 console.log("Area:", calculateArea(10, 8)); // Custom width
 --------------------------------------------------------------------------------------------------------------
-*/
 // Anonymous Functions
 // Assign an anonymous function to a variable
 const multiply = function (a, b) {
@@ -37,3 +36,11 @@ const multiply = function (a, b) {
 
 // Call the function
 console.log("Multiplication:", multiply(4, 5));
+--------------------------------------------------------------------------------------------------------------
+*/
+// Arrow Functions
+// Convert a temperature from Celsius to Fahrenheit
+const celsiusToFahrenheit = (celsius) => (celsius * 9) / 5 + 32;
+
+// Call the function
+console.log("Fahrenheit:", celsiusToFahrenheit(30));
