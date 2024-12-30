@@ -37,3 +37,17 @@ VALUES
 (1, 300.75, '2024-12-04');
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Inner Join
+-- Inner Join Example
+SELECT 
+    Orders.OrderID, 
+    Customers.CustomerName, 
+    Orders.OrderAmount, 
+    Orders.OrderDate
+FROM 
+    Orders
+INNER JOIN 
+    Customers
+ON 
+    Orders.CustomerID = Customers.CustomerID;
