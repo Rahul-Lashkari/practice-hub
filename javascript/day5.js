@@ -37,10 +37,23 @@ const multiply = function (a, b) {
 // Call the function
 console.log("Multiplication:", multiply(4, 5));
 --------------------------------------------------------------------------------------------------------------
-*/
 // Arrow Functions
 // Convert a temperature from Celsius to Fahrenheit
 const celsiusToFahrenheit = (celsius) => (celsius * 9) / 5 + 32;
 
 // Call the function
 console.log("Fahrenheit:", celsiusToFahrenheit(30));
+--------------------------------------------------------------------------------------------------------------
+*/
+// Functions with Multiple Steps
+// Function to determine the largest number in an array
+const findLargest = (numbers) => {
+    let largest = numbers[0];
+    for (let num of numbers) {
+        if (num > largest) largest = num;
+    }
+    return largest;
+};
+
+// Call the function
+console.log("Largest number:", findLargest([10, 20, 5, 8, 30]));
