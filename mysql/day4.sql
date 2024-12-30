@@ -68,3 +68,20 @@ ON
     Customers.CustomerID = Orders.CustomerID;
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Aggregate Functions with JOIN
+-- Total Order Amount per Customer
+SELECT 
+    Customers.CustomerName, 
+    SUM(Orders.OrderAmount) AS TotalOrderAmount
+FROM 
+    Orders
+INNER JOIN 
+    Customers
+ON 
+    Orders.CustomerID = Customers.CustomerID
+GROUP BY 
+    Customers.CustomerName;
+
+-- --------------------------------------------------------------------------------------------------------------
+
