@@ -51,3 +51,20 @@ INNER JOIN
     Customers
 ON 
     Orders.CustomerID = Customers.CustomerID;
+
+-- --------------------------------------------------------------------------------------------------------------
+
+-- Left Join
+-- Left Join Example
+SELECT 
+    Customers.CustomerName, 
+    Orders.OrderID, 
+    Orders.OrderAmount
+FROM 
+    Customers
+LEFT JOIN 
+    Orders
+ON 
+    Customers.CustomerID = Orders.CustomerID;
+
+-- --------------------------------------------------------------------------------------------------------------
