@@ -85,3 +85,17 @@ GROUP BY
 
 -- --------------------------------------------------------------------------------------------------------------
 
+-- Self-Join (Optional Advanced Concept)
+-- Self-Join Example
+SELECT 
+    A.CustomerName AS Customer1, 
+    B.CustomerName AS Customer2
+FROM 
+    Customers A, 
+    Customers B
+WHERE 
+    A.ContactNumber = B.ContactNumber
+AND 
+    A.CustomerID <> B.CustomerID;
+
+-- --------------------------------------------------------------------------------------------------------------
