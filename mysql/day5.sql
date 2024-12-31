@@ -15,3 +15,17 @@ VALUES
     ('Alice Johnson', 'Mathematics'),
     ('Bob Smith', 'Physics'),
     ('Catherine Brown', 'Chemistry');
+
+-- --------------------------------------------------------------------------------------------------------------
+
+-- Modify Existing Data in Students :-
+ALTER TABLE students
+ADD COLUMN teacher_id INT;
+
+UPDATE students
+SET teacher_id = 1
+WHERE id <= 2;
+
+UPDATE students
+SET teacher_id = 2
+WHERE id > 2;
