@@ -58,3 +58,15 @@ VALUES
     (3, 3);
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Query Course Assignments
+SELECT 
+    courses.course_name,
+    teachers.teacher_name
+FROM course_assignments
+INNER JOIN courses
+ON course_assignments.course_id = courses.course_id
+INNER JOIN teachers
+ON course_assignments.teacher_id = teachers.teacher_id;
+
+-- --------------------------------------------------------------------------------------------------------------
