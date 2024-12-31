@@ -34,7 +34,6 @@ for (let movie of favoriteMovies) {
     console.log(movie);
 }
 --------------------------------------------------------------------------------------------------------------
-*/
 // Array Methods - map, filter, and reduce :-
 let favoriteMovies = ["Inception", "The Matrix", "Interstellar"];
 // Using map to uppercase all movie names
@@ -48,3 +47,22 @@ console.log("Movies with Long Names:", longMovies);
 // Using reduce to concatenate all movie names
 let allMovies = favoriteMovies.reduce((acc, movie) => acc + ", " + movie);
 console.log("All Movies in One String:", allMovies);
+--------------------------------------------------------------------------------------------------------------
+*/
+// Multidimensional Arrays :-
+// Creating a 2D array
+let movieGenres = [
+    ["Sci-Fi", "Inception", "Interstellar"],
+    ["Action", "The Matrix", "John Wick"],
+    ["Drama", "Parasite", "The Pursuit of Happyness"]
+];
+
+// Accessing elements
+console.log("First Genre:", movieGenres[0][0]);
+console.log("Second Movie in Action:", movieGenres[1][1]);
+
+// Iterating over the 2D array
+movieGenres.forEach(genre => {
+    console.log("Genre:", genre[0]);
+    console.log("Movies:", genre.slice(1).join(", "));
+});
