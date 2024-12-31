@@ -39,3 +39,22 @@ SELECT
 FROM students
 INNER JOIN teachers
 ON students.teacher_id = teachers.teacher_id;
+
+-- --------------------------------------------------------------------------------------------------------------
+
+-- Add and Query Course Assignments :-
+CREATE TABLE course_assignments (
+    assignment_id INT AUTO_INCREMENT PRIMARY KEY,
+    course_id INT NOT NULL,
+    teacher_id INT NOT NULL,
+    FOREIGN KEY (course_id) REFERENCES courses(course_id),
+    FOREIGN KEY (teacher_id) REFERENCES teachers(teacher_id)
+);
+
+INSERT INTO course_assignments (course_id, teacher_id)
+VALUES 
+    (1, 1),
+    (2, 2),
+    (3, 3);
+
+-- --------------------------------------------------------------------------------------------------------------
