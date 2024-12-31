@@ -48,7 +48,6 @@ console.log("Movies with Long Names:", longMovies);
 let allMovies = favoriteMovies.reduce((acc, movie) => acc + ", " + movie);
 console.log("All Movies in One String:", allMovies);
 --------------------------------------------------------------------------------------------------------------
-*/
 // Multidimensional Arrays :-
 // Creating a 2D array
 let movieGenres = [
@@ -66,3 +65,14 @@ movieGenres.forEach(genre => {
     console.log("Genre:", genre[0]);
     console.log("Movies:", genre.slice(1).join(", "));
 });
+--------------------------------------------------------------------------------------------------------------
+*/
+// Sorting and Reversing Arrays :-
+let favoriteMovies = ["Inception", "The Matrix", "Interstellar"];
+// Sorting alphabetically
+favoriteMovies.sort();
+console.log("Alphabetically Sorted Movies:", favoriteMovies);
+
+// Reversing the order
+favoriteMovies.reverse();
+console.log("Reversed Movies:", favoriteMovies);
