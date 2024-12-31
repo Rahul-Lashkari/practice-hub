@@ -29,3 +29,13 @@ WHERE id <= 2;
 UPDATE students
 SET teacher_id = 2
 WHERE id > 2;
+
+-- --------------------------------------------------------------------------------------------------------------
+
+-- Inner Join Query :-
+SELECT 
+    students.name,
+    teachers.teacher_name
+FROM students
+INNER JOIN teachers
+ON students.teacher_id = teachers.teacher_id;
