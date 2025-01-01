@@ -98,3 +98,71 @@ GROUP BY
 +---------------+------------------+-----------------+
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Subqueries
+-- Q. Find the teacher with the highest number of course assignments.
+-- Teacher with the highest number of course assignments
+SELECT 
+    teacher_id, 
+    teacher_name 
+FROM 
+    teachers 
+WHERE 
+    teacher_id = (
+        SELECT teacher_id 
+        FROM course_assignments 
+        GROUP BY teacher_id 
+        ORDER BY COUNT(course_id) DESC 
+        LIMIT 1
+    );
+
++------------+---------------+
+| teacher_id | teacher_name  |
++------------+---------------+
+|          1 | Alice Johnson |
++------------+---------------+
+
+-- --------------------------------------------------------------------------------------------------------------
+
+-- Working with Views
+-- Q. Create a view to simplify queries for student-course-teacher details.
+-- Create a view for student-course-teacher details
+CREATE VIEW StudentDetails AS
+SELECT 
+    s.name AS student_name, 
+    t.teacher_name, 
+    c.course_name 
+FROM 
+    students s
+LEFT JOIN teachers t ON s.teacher_id = t.teacher_id
+LEFT JOIN courses c ON s.course_id = c.course_id;
+
+-- Use the view
+SELECT * FROM StudentDetails;
++--------------+---------------+-------------+
+| student_name | teacher_name  | course_name |
++--------------+---------------+-------------+
+| Charlie      | Alice Johnson | NULL        |
++--------------+---------------+-------------+
+
+-- --------------------------------------------------------------------------------------------------------------
+
+-- Managing Null Values with IFNULL
+-- Q. Replace NULL values in course or teacher assignments with placeholders.
+-- Replace NULL values with placeholders
+SELECT 
+    s.name AS student_name, 
+    IFNULL(t.teacher_name, 'Unassigned') AS teacher_name, 
+    IFNULL(c.course_name, 'No Course') AS course_name
+FROM 
+    students s
+LEFT JOIN teachers t ON s.teacher_id = t.teacher_id
+LEFT JOIN courses c ON s.course_id = c.course_id;
+
++--------------+---------------+-------------+
+| student_name | teacher_name  | course_name |
++--------------+---------------+-------------+
+| Charlie      | Alice Johnson | No Course   |
++--------------+---------------+-------------+
+
+-- --------------------------------------------------------------------------------------------------------------
