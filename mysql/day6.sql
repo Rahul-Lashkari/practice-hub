@@ -76,3 +76,25 @@ JOIN customers c ON o.CustomerID = c.CustomerID;
 +---------+---------------+-------------+----------+------------------+
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Aggregate Functions with GROUP BY
+-- Q. Calculate the total order amount and average discount for each customer.
+-- Total order amount and average discount per customer
+SELECT 
+    c.CustomerName, 
+    SUM(o.OrderAmount) AS TotalOrderAmount, 
+    AVG(o.Discount) AS AverageDiscount
+FROM 
+    orders o
+JOIN customers c ON o.CustomerID = c.CustomerID
+GROUP BY 
+    c.CustomerID;
+
++---------------+------------------+-----------------+
+| CustomerName  | TotalOrderAmount | AverageDiscount |
++---------------+------------------+-----------------+
+| Alice Johnson |           450.75 |       15.000000 |
+| Bob Smith     |           200.50 |       10.000000 |
++---------------+------------------+-----------------+
+
+-- --------------------------------------------------------------------------------------------------------------
