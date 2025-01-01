@@ -166,3 +166,36 @@ LEFT JOIN courses c ON s.course_id = c.course_id;
 +--------------+---------------+-------------+
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Deleting Data
+-- Q. Remove a course assignment to demonstrate safe deletion.
+-- Delete a course assignment
+DELETE FROM course_assignments 
+WHERE course_id = 2 AND teacher_id = 2;
+
+-- Verify deletion
+SELECT * FROM course_assignments;
++---------------+-----------+------------+
+| assignment_id | course_id | teacher_id |
++---------------+-----------+------------+
+|            10 |         1 |          1 |
++---------------+-----------+------------+
+
+-- --------------------------------------------------------------------------------------------------------------
+
+-- Backing Up and Restoring Data
+-- Q. Export teachers table data into a backup and restore it.
+-- Export teachers table data
+SELECT * FROM teachers INTO OUTFILE '/tmp/teachers_backup.csv' 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\n';
+
+-- Restore the data (adjust path as needed)
+LOAD DATA INFILE '/tmp/teachers_backup.csv' 
+INTO TABLE teachers 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\n';
+
+-- --------------------------------------------------------------------------------------------------------------
