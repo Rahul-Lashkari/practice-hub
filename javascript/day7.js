@@ -27,3 +27,45 @@ console.log("Sum of Numbers:", sum);
 // Calculate product of numbers
 const product = numbers.reduce((total, num) => total * num, 1);
 console.log("Product of Numbers:", product);
+
+// Finding Maximum with reduce
+const maxNumber = numbers.reduce((max, num) => (num > max ? num : max), numbers[0]);
+console.log("Maximum Number:", maxNumber);
+
+// Array Flattening with flat
+const nestedArray = [1, [2, 3], [4, [5, 6]]];
+const flatArray = nestedArray.flat(2);
+console.log("Flattened Array:", flatArray);
+
+// Sorting Arrays
+// Sort in ascending order
+const sortedNumbers = [...numbers].sort((a, b) => a - b);
+console.log("Sorted Numbers (Ascending):", sortedNumbers);
+
+// Sort in descending order
+const descendingNumbers = [...numbers].sort((a, b) => b - a);
+console.log("Sorted Numbers (Descending):", descendingNumbers);
+
+// Removing Duplicates with Set
+const duplicateNumbers = [1, 2, 2, 3, 4, 4, 5];
+const uniqueNumbers = [...new Set(duplicateNumbers)];
+console.log("Unique Numbers:", uniqueNumbers);
+
+// Advanced Example - Grouping with reduce
+const people = [
+    { name: "Alice", age: 21 },
+    { name: "Bob", age: 25 },
+    { name: "Charlie", age: 21 }
+  ];
+  
+  const groupedByAge = people.reduce((groups, person) => {
+    const { age } = person;
+    if (!groups[age]) {
+      groups[age] = [];
+    }
+    groups[age].push(person);
+    return groups;
+  }, {});
+  
+  console.log("Grouped by Age:", groupedByAge);
+  
