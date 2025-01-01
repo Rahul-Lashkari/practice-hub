@@ -50,3 +50,29 @@ SELECT * FROM orders;
 +---------+------------+-------------+------------+----------+
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Using CASE in Queries
+-- Q. Generate a report that includes customer names, order amounts, and discount categories.
+-- Report with discount categories
+SELECT 
+    o.OrderID, 
+    c.CustomerName, 
+    o.OrderAmount, 
+    o.Discount,
+    CASE 
+        WHEN o.Discount = 20.00 THEN 'High Discount'
+        ELSE 'Low Discount'
+    END AS DiscountCategory
+FROM 
+    orders o
+JOIN customers c ON o.CustomerID = c.CustomerID;
+
++---------+---------------+-------------+----------+------------------+
+| OrderID | CustomerName  | OrderAmount | Discount | DiscountCategory |
++---------+---------------+-------------+----------+------------------+
+|       1 | Alice Johnson |      150.00 |    10.00 | Low Discount     |
+|       2 | Bob Smith     |      200.50 |    10.00 | Low Discount     |
+|       3 | Alice Johnson |      300.75 |    20.00 | High Discount    |
++---------+---------------+-------------+----------+------------------+
+
+-- --------------------------------------------------------------------------------------------------------------
