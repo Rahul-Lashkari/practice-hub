@@ -73,3 +73,24 @@ FROM orders;
 +----------------------+
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Introducing Views :-
+-- Q. Create a View to simplify retrieving all students with their teacher names and course names.
+-- Q. Select from the created View to test it.
+
+-- Create a view for simplified retrieval of student details
+CREATE VIEW student_details AS
+SELECT students.name AS student_name, teachers.teacher_name, courses.course_name
+FROM students
+LEFT JOIN teachers ON students.teacher_id = teachers.teacher_id
+LEFT JOIN courses ON students.course_id = courses.course_id;
+
+-- Test the view
+SELECT * FROM student_details;
++--------------+---------------+-------------+
+| student_name | teacher_name  | course_name |
++--------------+---------------+-------------+
+| Charlie      | Alice Johnson | NULL        |
++--------------+---------------+-------------+
+
+-- --------------------------------------------------------------------------------------------------------------
