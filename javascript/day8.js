@@ -69,3 +69,27 @@ async function fetchWithError() {
 fetchWithError();
 
 //--------------------------------------------------------------------------------------------------------------
+
+// Modularized Code Using ES6 Modules
+// File 1: mathUtils.js
+// export function add(a, b) {
+//     return a + b;
+// }
+
+// export function multiply(a, b) {
+//     return a * b;
+// }
+
+// // Default Export
+// export default function subtract(a, b) {
+//     return a - b;
+// }
+
+// File 2: main.js
+// import subtract, { add, multiply } from './mathUtils.js';
+
+// console.log(add(5, 3)); // 8
+// console.log(multiply(5, 3)); // 15
+// console.log(subtract(5, 3)); // 2
+
+//--------------------------------------------------------------------------------------------------------------
