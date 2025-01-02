@@ -94,3 +94,20 @@ SELECT * FROM student_details;
 +--------------+---------------+-------------+
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Using Self-Joins :-
+-- Q. Use a Self-Join to find customers who have placed orders with the same amount.
+-- Q. Add a query to detect teachers teaching multiple subjects (if applicable).
+
+-- Find customers with the same order amounts
+SELECT c1.CustomerName AS customer_1, c2.CustomerName AS customer_2, c1.OrderAmount
+FROM customers c1
+INNER JOIN customers c2 ON c1.OrderAmount = c2.OrderAmount AND c1.CustomerID < c2.CustomerID;
+
+-- Detect teachers teaching multiple subjects (if any subjects column existed)
+SELECT teacher_name, COUNT(subject) AS subject_count
+FROM teachers
+GROUP BY teacher_name
+HAVING COUNT(subject) > 1;
+
+-- --------------------------------------------------------------------------------------------------------------
