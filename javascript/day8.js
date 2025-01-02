@@ -9,6 +9,8 @@ Day 8 Topics:
 5. Advanced Array Methods (reduce, map chaining)
 */
 
+//--------------------------------------------------------------------------------------------------------------
+
 // Introduced Closures :-
 // Closure Example: Counter
 function createCounter() {
@@ -23,3 +25,33 @@ const counter = createCounter();
 console.log(counter()); // 1
 console.log(counter()); // 2
 console.log(counter()); // 3
+
+//--------------------------------------------------------------------------------------------------------------
+
+// Explored Promises and Async/Await :-
+// Using Promises
+const fetchData = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Data fetched successfully!");
+        }, 2000);
+    });
+};
+
+fetchData()
+    .then((data) => console.log(data))
+    .catch((error) => console.error(error));
+
+// Using Async/Await
+async function fetchDataAsync() {
+    try {
+        const data = await fetchData();
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+fetchDataAsync();
+
+//--------------------------------------------------------------------------------------------------------------
