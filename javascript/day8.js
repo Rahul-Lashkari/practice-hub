@@ -93,3 +93,20 @@ fetchWithError();
 // console.log(subtract(5, 3)); // 2
 
 //--------------------------------------------------------------------------------------------------------------
+
+// Leveraged Advanced Array Methods :-
+const students = [
+    { name: "Alice", score: 85 },
+    { name: "Bob", score: 72 },
+    { name: "Charlie", score: 90 },
+];
+
+// Using reduce to calculate average score
+const averageScore = students.reduce((total, student) => total + student.score, 0) / students.length;
+console.log("Average Score:", averageScore); // Average Score: 82.33
+
+// Chaining map and filter
+const highScorers = students
+    .filter((student) => student.score > 80)
+    .map((student) => student.name);
+console.log("High Scorers:", highScorers); // High Scorers: ['Alice', 'Charlie']
