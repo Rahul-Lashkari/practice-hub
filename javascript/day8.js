@@ -55,3 +55,17 @@ async function fetchDataAsync() {
 fetchDataAsync();
 
 //--------------------------------------------------------------------------------------------------------------
+
+// Implemented Error Handling in Asynchronous Code :-
+// Handling Errors with try...catch
+async function fetchWithError() {
+    try {
+        throw new Error("Simulated Error!");
+    } catch (error) {
+        console.error("Caught an error:", error.message);
+    }
+}
+
+fetchWithError();
+
+//--------------------------------------------------------------------------------------------------------------
