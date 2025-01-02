@@ -45,3 +45,31 @@ RIGHT JOIN teachers ON students.teacher_id = teachers.teacher_id;
 +--------------+-----------------+
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Aggregation and Grouping
+-- Q. Find the number of students assigned to each teacher.
+-- Q. Retrieve the average OrderAmount from the orders table.
+
+-- Count students assigned to each teacher
+SELECT teachers.teacher_name, COUNT(students.id) AS student_count
+FROM teachers
+LEFT JOIN students ON teachers.teacher_id = students.teacher_id
+GROUP BY teachers.teacher_name;
++-----------------+---------------+
+| teacher_name    | student_count |
++-----------------+---------------+
+| Alice Johnson   |             1 |
+| Bob Smith       |             0 |
+| Catherine Brown |             0 |
++-----------------+---------------+
+
+-- Retrieve the average order amount
+SELECT AVG(OrderAmount) AS average_order_amount
+FROM orders;
++----------------------+
+| average_order_amount |
++----------------------+
+|           217.083333 |
++----------------------+
+
+-- --------------------------------------------------------------------------------------------------------------
