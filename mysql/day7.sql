@@ -16,3 +16,32 @@ INNER JOIN teachers ON students.teacher_id = teachers.teacher_id;
 +--------------+---------------+
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Applying LEFT JOIN and RIGHT JOIN :-
+-- Q. Use a LEFT JOIN to retrieve all teachers, even those not assigned to any students.
+-- Q. Use a RIGHT JOIN to retrieve all students, even those not assigned a teacher.
+-- Retrieve all teachers and their assigned students (if any)
+SELECT teachers.teacher_name, students.name AS student_name
+FROM teachers
+LEFT JOIN students ON teachers.teacher_id = students.teacher_id;
++-----------------+--------------+
+| teacher_name    | student_name |
++-----------------+--------------+
+| Alice Johnson   | Charlie      |
+| Bob Smith       | NULL         |
+| Catherine Brown | NULL         |
++-----------------+--------------+
+
+-- Retrieve all students and their assigned teachers (if any)
+SELECT students.name AS student_name, teachers.teacher_name
+FROM students
+RIGHT JOIN teachers ON students.teacher_id = teachers.teacher_id;
++--------------+-----------------+
+| student_name | teacher_name    |
++--------------+-----------------+
+| Charlie      | Alice Johnson   |
+| NULL         | Bob Smith       |
+| NULL         | Catherine Brown |
++--------------+-----------------+
+
+-- --------------------------------------------------------------------------------------------------------------
