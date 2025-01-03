@@ -80,3 +80,36 @@ DELIMITER ;
 CALL AddCourse('Python Programming', 8, 'John Doe');
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Transactions :-
+-- Q. Start a transaction to update a teacher's subject and delete a student. Then rollback the changes.
+-- Q. Use ROLLBACK to demonstrate transaction control.
+
+-- Start a transaction
+START TRANSACTION;
+
+-- Update a teacher's subject
+UPDATE teachers
+SET subject = 'Biology'
+WHERE teacher_name = 'Alice Johnson';
+
+-- Delete a student
+DELETE FROM students
+WHERE id = 1;
+
+-- Rollback the transaction
+ROLLBACK;
+
+-- Verify no changes were made
+SELECT * FROM teachers;
++------------+-----------------+-----------+
+| teacher_id | teacher_name    | subject   |
++------------+-----------------+-----------+
+|          1 | Alice Johnson   | Biology   |
+|          2 | Bob Smith       | Physics   |
+|          3 | Catherine Brown | Chemistry |
++------------+-----------------+-----------+
+SELECT * FROM students;
+-- Empty set (0.00 sec)
+
+-- --------------------------------------------------------------------------------------------------------------
