@@ -40,3 +40,21 @@ SELECT teacher_name,
 FROM teachers;
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Indexing :-
+-- Q. Create an index on the teacher_id column in the students table to improve query performance.
+-- Q. Verify the created index using SHOW INDEX.
+
+-- Create an index on teacher_id in students
+CREATE INDEX idx_teacher_id ON students(teacher_id);
+
+-- Verify the created index
+SHOW INDEX FROM students;
++----------+------------+----------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| Table    | Non_unique | Key_name       | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
++----------+------------+----------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| students |          0 | PRIMARY        |            1 | id          | A         |           1 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| students |          1 | idx_teacher_id |            1 | teacher_id  | A         |           1 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
++----------+------------+----------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+
+-- --------------------------------------------------------------------------------------------------------------
