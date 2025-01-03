@@ -24,3 +24,19 @@ RIGHT JOIN teachers ON students.teacher_id = teachers.teacher_id;
 +--------------+-----------------+
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Window Functions :-
+-- Q. Use a RANK window function to rank customers by their OrderAmount in descending order.
+-- Q. Use a ROW_NUMBER window function to assign unique row numbers for each teacher.
+
+-- Rank customers by their order amount
+SELECT CustomerName, OrderAmount,
+       RANK() OVER (ORDER BY OrderAmount DESC) AS rank
+FROM customers;
+
+-- Assign row numbers to teachers
+SELECT teacher_name,
+       ROW_NUMBER() OVER (ORDER BY teacher_name) AS row_number
+FROM teachers;
+
+-- --------------------------------------------------------------------------------------------------------------
