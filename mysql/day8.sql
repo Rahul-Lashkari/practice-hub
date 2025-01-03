@@ -58,3 +58,25 @@ SHOW INDEX FROM students;
 +----------+------------+----------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Stored Procedures :-\
+-- Q. Create a stored procedure to add a new course to the courses table.
+-- Q. Call the stored procedure to test its functionality.
+
+-- Create a stored procedure to add a course
+DELIMITER //
+CREATE PROCEDURE AddCourse(
+    IN course_name VARCHAR(255),
+    IN duration_weeks INT,
+    IN instructor_name VARCHAR(255)
+)
+BEGIN
+    INSERT INTO courses (course_name, duration_weeks, instructor_name)
+    VALUES (course_name, duration_weeks, instructor_name);
+END //
+DELIMITER ;
+
+-- Call the stored procedure to test
+CALL AddCourse('Python Programming', 8, 'John Doe');
+
+-- --------------------------------------------------------------------------------------------------------------
