@@ -65,3 +65,18 @@ mysqldump -u root -p mydb > mydb_backup.sql
 mysql -u root -p mydb < mydb_backup.sql
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Data Export and Import :-
+-- Q. Export the teachers table data into a CSV file.
+-- Q. Import data into the teachers table from a CSV file.
+-- Export data from teachers table (this command runs on the terminal)
+SELECT * FROM teachers INTO OUTFILE '/path/to/export/teachers.csv'
+FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n';
+
+-- Import data into teachers table (this command runs on the terminal)
+LOAD DATA INFILE '/path/to/import/teachers.csv'
+INTO TABLE teachers
+FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+-- --------------------------------------------------------------------------------------------------------------
