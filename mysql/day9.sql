@@ -26,3 +26,30 @@ VALUES ('Emily', 26, 'A', NULL, NULL);
 SELECT * FROM students;
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- User-Defined Functions :-
+-- Q. Create a user-defined function to calculate the total number of orders for a given customer.
+-- Q. Test the function by passing a CustomerID.
+
+-- Create a user-defined function to count orders for a customer
+DELIMITER //
+CREATE FUNCTION CountCustomerOrders(cust_id INT)
+RETURNS INT
+DETERMINISTIC
+BEGIN
+    DECLARE order_count INT;
+    SELECT COUNT(*) INTO order_count FROM orders WHERE CustomerID = cust_id;
+    RETURN order_count;
+END;
+//
+DELIMITER ;
+
+-- Test the function
+SELECT CountCustomerOrders(1) AS TotalOrders;
++-------------+
+| TotalOrders |
++-------------+
+|           1 |
++-------------+
+
+-- --------------------------------------------------------------------------------------------------------------
