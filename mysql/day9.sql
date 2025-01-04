@@ -53,3 +53,15 @@ SELECT CountCustomerOrders(1) AS TotalOrders;
 +-------------+
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Database Backup and Restore :-
+-- Q. Explain how to back up and restore a database using MySQL commands.
+-- Q. Perform a backup of the mydb database and document the steps.
+-- (This step is documentation-heavy; commands won't execute in SQLTools)
+# Backup command
+mysqldump -u root -p mydb > mydb_backup.sql
+
+# Restore command
+mysql -u root -p mydb < mydb_backup.sql
+
+-- --------------------------------------------------------------------------------------------------------------
