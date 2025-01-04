@@ -80,3 +80,29 @@ FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Stored Functions with Triggers :-
+-- Q. Combine stored functions with triggers for more complex scenarios.
+-- Q. Example: Auto-calculate and update the total OrderAmount for a customer in customers after an order is inserted.
+-- Create a trigger to auto-update total OrderAmount for a customer
+DELIMITER //
+CREATE TRIGGER UpdateTotalOrderAmount
+AFTER INSERT ON orders
+FOR EACH ROW
+BEGIN
+    UPDATE customers
+    SET ContactNumber = (
+        SELECT SUM(OrderAmount) FROM orders WHERE CustomerID = NEW.CustomerID
+    )
+    WHERE CustomerID = NEW.CustomerID;
+END;
+//
+DELIMITER ;
+
+-- Test the trigger
+INSERT INTO orders (CustomerID, OrderAmount, OrderDate) 
+VALUES (1, 500.00, '2024-12-20');
+
+SELECT * FROM customers;
+
+-- --------------------------------------------------------------------------------------------------------------
