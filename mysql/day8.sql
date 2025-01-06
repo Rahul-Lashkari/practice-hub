@@ -1,4 +1,4 @@
--- MySQL - Day 7 🚀
+-- MySQL - Day 8 🚀
 -- Explored advanced joins, window functions, indexing, and stored procedures.
 
 -- --------------------------------------------------------------------------------------------------------------

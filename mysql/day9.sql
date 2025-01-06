@@ -1,4 +1,4 @@
--- MySQL - Day 7 🚀
+-- MySQL - Day 9 🚀
 -- Explored triggers, user-defined functions, database backup and restore, and data export/import.
 
 -- --------------------------------------------------------------------------------------------------------------
