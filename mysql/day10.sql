@@ -52,3 +52,25 @@ EXPLAIN SELECT CustomerName, ContactNumber FROM customers WHERE CustomerID IN (S
 +----+-------------+-----------+------------+------+---------------+------+---------+------+------+----------+-------------------------------------------------------------------+
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Views :-
+-- Q. Create a view that simplifies complex queries, such as combining orders and customers data.
+-- Q. Use the view to fetch data.
+-- Create a view for combined customer and order details
+CREATE VIEW customer_orders AS
+SELECT c.CustomerName, c.ContactNumber, o.OrderAmount, o.OrderDate
+FROM customers c
+JOIN orders o ON c.CustomerID = o.CustomerID;
+
+-- Use the view
+SELECT * FROM customer_orders;
++---------------+---------------+-------------+------------+
+| CustomerName  | ContactNumber | OrderAmount | OrderDate  |
++---------------+---------------+-------------+------------+
+| Alice Johnson | 950.75        |      150.00 | 2024-12-01 |
+| Bob Smith     | 8765432109    |      200.50 | 2024-12-03 |
+| Alice Johnson | 950.75        |      300.75 | 2024-12-04 |
+| Alice Johnson | 950.75        |      500.00 | 2024-12-20 |
++---------------+---------------+-------------+------------+
+
+-- --------------------------------------------------------------------------------------------------------------
