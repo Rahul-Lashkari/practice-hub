@@ -74,3 +74,18 @@ SELECT * FROM customer_orders;
 +---------------+---------------+-------------+------------+
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Joins with Subqueries :-
+-- Q. Use subqueries within joins to extract meaningful insights, such as customers with the highest order amounts.
+-- Q. Test the query for accuracy.
+
+-- Join with a subquery to fetch customers with their highest order amounts
+SELECT c.CustomerName, o.OrderAmount, o.OrderDate
+FROM customers c
+JOIN (
+    SELECT CustomerID, MAX(OrderAmount) AS MaxOrder
+    FROM orders
+    GROUP BY CustomerID
+) o ON c.CustomerID = o.CustomerID;
+
+-- --------------------------------------------------------------------------------------------------------------
