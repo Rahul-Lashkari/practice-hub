@@ -89,3 +89,33 @@ JOIN (
 ) o ON c.CustomerID = o.CustomerID;
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Role-Based User Management :-
+-- Q. Create roles for read_only_user and data_entry_user.
+-- Q. Assign privileges to roles and users.
+
+-- Create roles
+CREATE ROLE read_only_user;
+CREATE ROLE data_entry_user;
+
+-- Grant privileges
+GRANT SELECT ON mydb.* TO read_only_user;
+GRANT INSERT, UPDATE, DELETE ON mydb.* TO data_entry_user;
+
+-- Assign roles to users
+CREATE USER 'readonly'@'localhost' IDENTIFIED BY 'password';
+CREATE USER 'dataentry'@'localhost' IDENTIFIED BY 'password';
+
+GRANT read_only_user TO 'readonly'@'localhost';
+GRANT data_entry_user TO 'dataentry'@'localhost';
+
+-- Show grants for a user
+SHOW GRANTS FOR 'readonly'@'localhost';
++------------------------------------------------------+
+| Grants for readonly@localhost                        |
++------------------------------------------------------+
+| GRANT USAGE ON *.* TO `readonly`@`localhost`         |
+| GRANT `read_only_user`@`%` TO `readonly`@`localhost` |
++------------------------------------------------------+
+
+-- --------------------------------------------------------------------------------------------------------------
