@@ -39,3 +39,30 @@ DELIMITER ;
 CALL add_course('Python Programming', 8, 'Sophia White');
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Functions :-
+-- Q. Create a user-defined function to calculate something like the total orders for a customer.
+-- Q. Test the function within a query.
+
+-- Create a function to calculate total orders for a customer
+DELIMITER $$
+CREATE FUNCTION get_total_orders(customer_id INT) RETURNS DECIMAL(10, 2)
+DETERMINISTIC
+BEGIN
+    DECLARE total DECIMAL(10, 2);
+    SELECT SUM(OrderAmount) INTO total FROM orders WHERE CustomerID = customer_id;
+    RETURN total;
+END$$
+DELIMITER ;
+
+-- Use the function
+SELECT CustomerName, get_total_orders(CustomerID) AS TotalOrders FROM customers;
++---------------+-------------+
+| CustomerName  | TotalOrders |
++---------------+-------------+
+| Alice Johnson |      950.75 |
+| Bob Smith     |      200.50 |
+| Catherine Lee |        NULL |
++---------------+-------------+
+
+-- --------------------------------------------------------------------------------------------------------------
