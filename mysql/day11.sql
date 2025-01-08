@@ -22,3 +22,20 @@ DELIMITER ;
 INSERT INTO students (name, age, grade, course_id, teacher_id) VALUES ('Liam', 22, 'B', 1, 2);
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Stored Procedures :-
+-- Q. Create a stored procedure to simplify repetitive tasks, like adding a new course and assigning a default instructor.
+-- Q. Test the procedure with multiple calls.
+
+-- Create a procedure to add a new course
+DELIMITER $$
+CREATE PROCEDURE add_course(course_name VARCHAR(255), duration_weeks INT, instructor_name VARCHAR(255))
+BEGIN
+    INSERT INTO courses (course_name, duration_weeks, instructor_name) VALUES (course_name, duration_weeks, instructor_name);
+END$$
+DELIMITER ;
+
+-- Call the procedure
+CALL add_course('Python Programming', 8, 'Sophia White');
+
+-- --------------------------------------------------------------------------------------------------------------
