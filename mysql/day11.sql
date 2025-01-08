@@ -89,3 +89,20 @@ UPDATE students SET grade = 'C' WHERE id = 1;
 ROLLBACK; -- Reverts the update
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Backup and Restore :-
+-- Q. Use SQL commands to create a backup and restore data.
+-- Q. Simulate restoring the courses table from the backup.
+
+-- Backup courses table
+SELECT * INTO OUTFILE '/var/lib/mysql-files/courses_backup.sql' FROM courses;
+
+-- Restore courses table (simulate by truncating and reloading)
+TRUNCATE TABLE courses;
+
+LOAD DATA INFILE '/var/lib/mysql-files/courses_backup.sql' 
+INTO TABLE courses 
+FIELDS TERMINATED BY ',' ENCLOSED BY '"' 
+LINES TERMINATED BY '\n';
+
+-- --------------------------------------------------------------------------------------------------------------
