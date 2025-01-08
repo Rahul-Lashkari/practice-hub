@@ -66,3 +66,26 @@ SELECT CustomerName, get_total_orders(CustomerID) AS TotalOrders FROM customers;
 +---------------+-------------+
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Transactions :-
+-- Q. Implement a transaction to ensure atomicity while updating multiple tables.
+-- Q. Use COMMIT and ROLLBACK for demonstration.
+
+-- Start a transaction to update courses and orders
+START TRANSACTION;
+
+-- Update courses
+UPDATE courses SET instructor_name = 'Robert Green' WHERE course_id = 2;
+
+-- Insert a new order
+INSERT INTO orders (CustomerID, OrderAmount, OrderDate) VALUES (3, 400.00, '2024-12-20');
+
+-- Commit the transaction
+COMMIT;
+
+-- Rollback demonstration
+START TRANSACTION;
+UPDATE students SET grade = 'C' WHERE id = 1;
+ROLLBACK; -- Reverts the update
+
+-- --------------------------------------------------------------------------------------------------------------
