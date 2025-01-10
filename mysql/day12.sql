@@ -16,3 +16,19 @@ LEFT JOIN courses c ON s.course_id = c.course_id;
 SELECT * FROM student_course_view;
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Indexing :-
+-- Q. Add indexes to improve query performance.
+-- Q. Demonstrate the difference in execution time before and after indexing.
+-- Add an index to the orders table for CustomerID
+CREATE INDEX idx_customer_id ON orders(CustomerID);
+
+-- Query to test performance
+EXPLAIN SELECT * FROM orders WHERE CustomerID = 1;
++----+-------------+--------+------------+------+-----------------+-----------------+---------+-------+------+----------+-------+
+| id | select_type | table  | partitions | type | possible_keys   | key             | key_len | ref   | rows | filtered | Extra |
++----+-------------+--------+------------+------+-----------------+-----------------+---------+-------+------+----------+-------+
+|  1 | SIMPLE      | orders | NULL       | ref  | idx_customer_id | idx_customer_id | 5       | const |    3 |   100.00 | NULL  |
++----+-------------+--------+------------+------+-----------------+-----------------+---------+-------+------+----------+-------+
+
+-- --------------------------------------------------------------------------------------------------------------
