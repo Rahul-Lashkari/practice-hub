@@ -67,3 +67,24 @@ JOIN addresses a ON c.CustomerID = a.customer_id;
 +---------------+-------------+-------------+
 
 -- --------------------------------------------------------------------------------------------------------------
+
+--  Prepared Statements :-
+-- Q. Use prepared statements to prevent SQL injection.
+-- Q. Showcase parameterized queries for safer database operations.
+-- Example of prepared statement
+PREPARE stmt FROM 'SELECT * FROM orders WHERE OrderAmount > ?';
+SET @amount = 200;
+EXECUTE stmt USING @amount;
+
+-- Deallocate the prepared statement
+DEALLOCATE PREPARE stmt;
++---------+------------+-------------+------------+----------+
+| OrderID | CustomerID | OrderAmount | OrderDate  | Discount |
++---------+------------+-------------+------------+----------+
+|       2 |          2 |      200.50 | 2024-12-03 |    10.00 |
+|       3 |          1 |      300.75 | 2024-12-04 |    20.00 |
+|       4 |          1 |      500.00 | 2024-12-20 |     NULL |
+|       5 |          3 |      400.00 | 2024-12-20 |     NULL |
++---------+------------+-------------+------------+----------+
+
+-- --------------------------------------------------------------------------------------------------------------
