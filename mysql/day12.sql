@@ -32,3 +32,38 @@ EXPLAIN SELECT * FROM orders WHERE CustomerID = 1;
 +----+-------------+--------+------------+------+-----------------+-----------------+---------+-------+------+----------+-------+
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Normalization
+-- Q. Demonstrate normalization by creating a new table for addresses and linking it to customers.
+-- Q. Refactor the customers table to remove redundancy.
+-- Create an addresses table
+CREATE TABLE addresses (
+    address_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT,
+    street VARCHAR(255),
+    city VARCHAR(100),
+    state VARCHAR(50),
+    postal_code VARCHAR(20),
+    FOREIGN KEY (customer_id) REFERENCES customers(CustomerID)
+);
+
+-- Insert sample data
+INSERT INTO addresses (customer_id, street, city, state, postal_code) 
+VALUES 
+(1, '123 Main St', 'Springfield', 'IL', '62701'),
+(2, '456 Elm St', 'Madison', 'WI', '53703');
+
+-- Refactor customers table
+ALTER TABLE customers DROP COLUMN ContactNumber;
+
+-- Join customers and addresses
+SELECT c.CustomerName, a.street, a.city FROM customers c 
+JOIN addresses a ON c.CustomerID = a.customer_id;
++---------------+-------------+-------------+
+| CustomerName  | street      | city        |
++---------------+-------------+-------------+
+| Alice Johnson | 123 Main St | Springfield |
+| Bob Smith     | 456 Elm St  | Madison     |
++---------------+-------------+-------------+
+
+-- --------------------------------------------------------------------------------------------------------------
