@@ -88,3 +88,38 @@ DEALLOCATE PREPARE stmt;
 +---------+------------+-------------+------------+----------+
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Optimization Techniques :-
+-- Q. Analyze and optimize queries using tools like EXPLAIN and ANALYZE.
+-- Q. Improve the performance of complex queries.
+-- Analyze a query for performance
+EXPLAIN SELECT o.OrderID, c.CustomerName, o.OrderAmount 
+FROM orders o 
+JOIN customers c ON o.CustomerID = c.CustomerID 
+WHERE o.OrderAmount > 100;
++----+-------------+-------+------------+--------+-----------------+---------+---------+-------------------+------+----------+-------------+
+| id | select_type | table | partitions | type   | possible_keys   | key     | key_len | ref               | rows | filtered | Extra       |
++----+-------------+-------+------------+--------+-----------------+---------+---------+-------------------+------+----------+-------------+
+|  1 | SIMPLE      | o     | NULL       | ALL    | idx_customer_id | NULL    | NULL    | NULL              |    3 |    33.33 | Using where |
+|  1 | SIMPLE      | c     | NULL       | eq_ref | PRIMARY         | PRIMARY | 4       | mydb.o.CustomerID |    1 |   100.00 | NULL        |
++----+-------------+-------+------------+--------+-----------------+---------+---------+-------------------+------+----------+-------------+
+
+-- Add composite index to optimize query
+CREATE INDEX idx_order_customer ON orders(CustomerID, OrderAmount);
+
+-- Test the optimized query
+SELECT o.OrderID, c.CustomerName, o.OrderAmount 
+FROM orders o 
+JOIN customers c ON o.CustomerID = c.CustomerID 
+WHERE o.OrderAmount > 100;
++---------+---------------+-------------+
+| OrderID | CustomerName  | OrderAmount |
++---------+---------------+-------------+
+|       1 | Alice Johnson |      150.00 |
+|       3 | Alice Johnson |      300.75 |
+|       4 | Alice Johnson |      500.00 |
+|       2 | Bob Smith     |      200.50 |
+|       5 | Catherine Lee |      400.00 |
++---------+---------------+-------------+
+
+-- --------------------------------------------------------------------------------------------------------------
