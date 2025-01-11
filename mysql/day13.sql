@@ -73,3 +73,22 @@ DELIMITER ;
 SELECT calculate_total_order_amount(1) AS total_amount;
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- CASE Statements :- 
+-- Q. Use CASE statements for conditional query results.
+-- Q. Add a column in students to display pass/fail status based on their grade.
+-- Query with CASE statement to determine pass/fail
+SELECT id, name, grade, 
+CASE 
+    WHEN grade IN ('A', 'B', 'C') THEN 'Pass'
+    ELSE 'Fail'
+END AS status
+FROM students;
++----+-------+-------+--------+
+| id | name  | grade | status |
++----+-------+-------+--------+
+|  3 | Emily | A     | Pass   |
+|  4 | Priya | F     | Fail   |
++----+-------+-------+--------+
+
+-- --------------------------------------------------------------------------------------------------------------
