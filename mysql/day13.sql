@@ -33,3 +33,24 @@ SELECT * FROM orders;
 +---------+------------+-------------+------------+----------+
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Triggers :-
+-- Q. Create triggers for automating actions during INSERT, UPDATE, or DELETE operations.
+-- Q. Demonstrate a trigger that updates the teacher_id column in the students table whenever a new student is added.
+-- Create a trigger to assign a default teacher when a student is added
+DELIMITER $$
+CREATE TRIGGER assign_default_teacher
+AFTER INSERT ON students
+FOR EACH ROW
+BEGIN
+    IF NEW.teacher_id IS NULL THEN
+        UPDATE students SET teacher_id = 1 WHERE id = NEW.id;
+    END IF;
+END$$
+DELIMITER ;
+
+-- Test the trigger
+INSERT INTO students (name, age, grade, course_id) VALUES ('Derek', 22, 'B', 1);
+SELECT * FROM students;
+
+-- --------------------------------------------------------------------------------------------------------------
