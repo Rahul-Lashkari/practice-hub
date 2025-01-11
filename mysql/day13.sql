@@ -92,3 +92,14 @@ FROM students;
 +----+-------+-------+--------+
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Backup & Restore :-
+-- Q. Learn how to back up and restore a database for disaster recovery.
+-- Q. Use mysqldump for backup and restoring a database.
+-- # Backup command
+mysqldump -u root -p mydb > mydb_backup.sql
+
+-- # Restore command
+mysql -u root -p mydb < mydb_backup.sql
+
+-- --------------------------------------------------------------------------------------------------------------
