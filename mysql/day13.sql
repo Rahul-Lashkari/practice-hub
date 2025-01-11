@@ -54,3 +54,22 @@ INSERT INTO students (name, age, grade, course_id) VALUES ('Derek', 22, 'B', 1);
 SELECT * FROM students;
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Stored Functions :-
+-- Q. Use stored functions to encapsulate reusable logic.
+-- Q. Write a function to calculate the total order amount for a specific customer.
+-- Create a stored function to calculate total order amount
+DELIMITER $$
+CREATE FUNCTION calculate_total_order_amount(customer_id INT) 
+RETURNS DECIMAL(10, 2)
+BEGIN
+    DECLARE total DECIMAL(10, 2);
+    SELECT SUM(OrderAmount) INTO total FROM orders WHERE CustomerID = customer_id;
+    RETURN IFNULL(total, 0.00);
+END$$
+DELIMITER ;
+
+-- Test the function
+SELECT calculate_total_order_amount(1) AS total_amount;
+
+-- --------------------------------------------------------------------------------------------------------------
