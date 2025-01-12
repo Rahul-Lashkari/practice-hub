@@ -61,3 +61,20 @@ GROUP BY c.CustomerName;
 +---------------+-------------+
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Performance Optimization with Indexes :-
+-- Q. Add indexes to frequently queried columns to improve query performance.
+-- Q. Compare execution plans with and without indexes.
+-- Step 5: Add indexes to the orders table
+CREATE INDEX idx_customer_id ON orders (CustomerID);
+CREATE INDEX idx_order_date ON orders (OrderDate);
+
+-- Step 6: Analyze execution plans
+EXPLAIN SELECT * FROM orders WHERE CustomerID = 1;
++----+-------------+--------+------------+------+------------------------------------+-----------------+---------+-------+------+----------+-------+
+| id | select_type | table  | partitions | type | possible_keys                      | key             | key_len | ref   | rows | filtered | Extra |
++----+-------------+--------+------------+------+------------------------------------+-----------------+---------+-------+------+----------+-------+
+|  1 | SIMPLE      | orders | NULL       | ref  | idx_customer_id,idx_order_customer | idx_customer_id | 5       | const |    3 |   100.00 | NULL  |
++----+-------------+--------+------------+------+------------------------------------+-----------------+---------+-------+------+----------+-------+
+
+-- --------------------------------------------------------------------------------------------------------------
