@@ -32,3 +32,32 @@ SET grade = 'B'
 WHERE id = 1;
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Advanced Joins and Nested Queries :- 
+-- Q. Write a query to find customers who have placed the highest orders.
+-- Q. Use a join to display customer details and their respective total order amounts.
+-- Step 3: Find customers with the highest orders
+SELECT c.CustomerName, o.OrderAmount
+FROM customers c
+JOIN orders o ON c.CustomerID = o.CustomerID
+WHERE o.OrderAmount = (SELECT MAX(OrderAmount) FROM orders);
++---------------+-------------+
+| CustomerName  | OrderAmount |
++---------------+-------------+
+| Alice Johnson |      500.00 |
++---------------+-------------+
+
+-- Step 4: Display total order amounts for each customer
+SELECT c.CustomerName, SUM(o.OrderAmount) AS TotalAmount
+FROM customers c
+JOIN orders o ON c.CustomerID = o.CustomerID
+GROUP BY c.CustomerName;
++---------------+-------------+
+| CustomerName  | TotalAmount |
++---------------+-------------+
+| Alice Johnson |      950.75 |
+| Bob Smith     |      200.50 |
+| Catherine Lee |      400.00 |
++---------------+-------------+
+
+-- --------------------------------------------------------------------------------------------------------------
