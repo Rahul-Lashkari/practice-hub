@@ -78,3 +78,25 @@ EXPLAIN SELECT * FROM orders WHERE CustomerID = 1;
 +----+-------------+--------+------------+------+------------------------------------+-----------------+---------+-------+------+----------+-------+
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Complex Queries with Window Functions
+-- Q. Use a window function to rank customers based on their total order amounts.
+-- Q. Display customers with ranks in the top 3.
+-- Step 7: Rank customers by total order amounts
+SELECT c.CustomerName, SUM(o.OrderAmount) AS TotalAmount,
+       RANK() OVER (ORDER BY SUM(o.OrderAmount) DESC) AS rank
+FROM customers c
+JOIN orders o ON c.CustomerID = o.CustomerID
+GROUP BY c.CustomerName;
+
+-- Step 8: Filter to show only the top 3 customers
+WITH ranked_customers AS (
+    SELECT c.CustomerName, SUM(o.OrderAmount) AS TotalAmount,
+           RANK() OVER (ORDER BY SUM(o.OrderAmount) DESC) AS rank
+    FROM customers c
+    JOIN orders o ON c.CustomerID = o.CustomerID
+    GROUP BY c.CustomerName
+)
+SELECT * FROM ranked_customers WHERE rank <= 3;
+
+-- --------------------------------------------------------------------------------------------------------------
