@@ -100,3 +100,30 @@ WITH ranked_customers AS (
 SELECT * FROM ranked_customers WHERE rank <= 3;
 
 -- --------------------------------------------------------------------------------------------------------------
+
+-- Error Handling and Transactions
+-- Q.  Create a transaction to ensure consistency when updating multiple tables.
+-- Q. Add error handling to rollback the transaction in case of failure.
+-- Step 9: Start a transaction to update student and course data
+START TRANSACTION;
+
+BEGIN
+    -- Update student course
+    UPDATE students
+    SET course_id = 2
+    WHERE id = 1;
+
+    -- Update course instructor
+    UPDATE courses
+    SET instructor_name = 'New Instructor'
+    WHERE course_id = 2;
+
+    -- Simulate an error for testing
+    -- ROLLBACK manually if this fails
+    INSERT INTO non_existing_table VALUES ('error');
+END;
+
+-- Step 10: Commit or rollback based on success
+COMMIT;
+
+-- --------------------------------------------------------------------------------------------------------------
