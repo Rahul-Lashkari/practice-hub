@@ -6,6 +6,8 @@
 #include <vector>
 using namespace std;
 
+#define N 9
+
 // f(x) = x^2 + 2
 int add(int a, int b)
 {
@@ -625,5 +627,4 @@ int main()
     }
 
     return 0;
-}
 }
