@@ -5,8 +5,8 @@
 #include <cctype>
 #include <vector>
 using namespace std;
-
-#define N 9
+#define N 3 // Size of the matrix (3x3)
+// #define N 9
 
 // f(x) = x^2 + 2
 int add(int a, int b)
@@ -182,6 +182,18 @@ void printBoard(vector<vector<int>>& board) {
         }
         cout << endl;
     }
+}
+
+bool isSymmetric(int matrix[N][N]) {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            // Check if element at (i, j) is equal to element at (j, i)
+            if (matrix[i][j] != matrix[j][i]) {
+                return false; // Not symmetric
+            }
+        }
+    }
+    return true; // Symmetric
 }
 
 int main()
@@ -607,23 +619,48 @@ int main()
     // cout << "Reversed string: " << reversedStr << endl;
     // return 0;
 
-    vector<vector<int>> board = {
-        {5, 3, 0, 0, 7, 0, 0, 0, 0},
-        {6, 0, 0, 1, 9, 5, 0, 0, 0},
-        {0, 9, 8, 0, 0, 0, 0, 6, 0},
-        {8, 0, 0, 0, 6, 0, 0, 0, 3},
-        {4, 0, 0, 8, 0, 3, 0, 0, 1},
-        {7, 0, 0, 0, 2, 0, 0, 0, 6},
-        {0, 6, 0, 0, 0, 0, 2, 8, 0},
-        {0, 0, 0, 4, 1, 9, 0, 0, 5},
-        {0, 0, 0, 0, 8, 0, 0, 7, 9}
-    };
+    // vector<vector<int>> board = {
+    //     {5, 3, 0, 0, 7, 0, 0, 0, 0},
+    //     {6, 0, 0, 1, 9, 5, 0, 0, 0},
+    //     {0, 9, 8, 0, 0, 0, 0, 6, 0},
+    //     {8, 0, 0, 0, 6, 0, 0, 0, 3},
+    //     {4, 0, 0, 8, 0, 3, 0, 0, 1},
+    //     {7, 0, 0, 0, 2, 0, 0, 0, 6},
+    //     {0, 6, 0, 0, 0, 0, 2, 8, 0},
+    //     {0, 0, 0, 4, 1, 9, 0, 0, 5},
+    //     {0, 0, 0, 0, 8, 0, 0, 7, 9}
+    // };
 
-    if (solveSudoku(board)) {
-        cout << "Solved Sudoku:\n";
-        printBoard(board);
+    // if (solveSudoku(board)) {
+    //     cout << "Solved Sudoku:\n";
+    //     printBoard(board);
+    // } else {
+    //     cout << "No solution exists.\n";
+    // }
+
+    // return 0;
+
+    int matrix[N][N];
+
+    cout << "Enter the elements of a " << N << "x" << N << " matrix:" << endl;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            cin >> matrix[i][j];
+        }
+    }
+
+    cout << "The entered matrix is: " << endl;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    if (isSymmetric(matrix)) {
+        cout << "The matrix is symmetric." << endl;
     } else {
-        cout << "No solution exists.\n";
+        cout << "The matrix is NOT symmetric." << endl;
     }
 
     return 0;
