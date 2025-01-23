@@ -62,12 +62,12 @@ void reverseString(string str) {
     cout << endl;
 }
 
-int factorial(int n) {
-    if (n <= 1) {
-        return 1;
-    }
-    return n * factorial(n - 1);
-}
+// int factorial(int n) {
+//     if (n <= 1) {
+//         return 1;
+//     }
+//     return n * factorial(n - 1);
+// }
 
 bool isPrime(int n) {
     if (n <= 1) return false;
@@ -194,6 +194,12 @@ bool isSymmetric(int matrix[N][N]) {
         }
     }
     return true; // Symmetric
+}
+
+int factorial(int n) {
+    if (n == 0 || n == 1)
+        return 1;
+    return n * factorial(n - 1);
 }
 
 int main()
@@ -640,27 +646,39 @@ int main()
 
     // return 0;
 
-    int matrix[N][N];
+    // int matrix[N][N];
 
-    cout << "Enter the elements of a " << N << "x" << N << " matrix:" << endl;
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            cin >> matrix[i][j];
-        }
-    }
+    // cout << "Enter the elements of a " << N << "x" << N << " matrix:" << endl;
+    // for (int i = 0; i < N; i++) {
+    //     for (int j = 0; j < N; j++) {
+    //         cin >> matrix[i][j];
+    //     }
+    // }
 
-    cout << "The entered matrix is: " << endl;
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            cout << matrix[i][j] << " ";
-        }
-        cout << endl;
-    }
+    // cout << "The entered matrix is: " << endl;
+    // for (int i = 0; i < N; i++) {
+    //     for (int j = 0; j < N; j++) {
+    //         cout << matrix[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
 
-    if (isSymmetric(matrix)) {
-        cout << "The matrix is symmetric." << endl;
+    // if (isSymmetric(matrix)) {
+    //     cout << "The matrix is symmetric." << endl;
+    // } else {
+    //     cout << "The matrix is NOT symmetric." << endl;
+    // }
+
+    // return 0;
+
+    int num;
+    cout << "Enter a number to calculate its factorial: ";
+    cin >> num;
+
+    if (num < 0) {
+        cout << "Factorial is not defined for negative numbers." << endl;
     } else {
-        cout << "The matrix is NOT symmetric." << endl;
+        cout << "The factorial of " << num << " is " << factorial(num) << endl;
     }
 
     return 0;
