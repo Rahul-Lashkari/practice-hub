@@ -69,13 +69,13 @@ void reverseString(string str) {
 //     return n * factorial(n - 1);
 // }
 
-bool isPrime(int n) {
-    if (n <= 1) return false;
-    for (int i = 2; i <= n / 2; ++i) {
-        if (n % i == 0) return false;
-    }
-    return true;
-}
+// bool isPrime(int n) {
+//     if (n <= 1) return false;
+//     for (int i = 2; i <= n / 2; ++i) {
+//         if (n % i == 0) return false;
+//     }
+//     return true;
+// }
 
 class BankAccount {
 private:
@@ -200,6 +200,14 @@ int factorial(int n) {
     if (n == 0 || n == 1)
         return 1;
     return n * factorial(n - 1);
+}
+
+bool isPrime(int num) {
+    if (num <= 1) return false;
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) return false;
+    }
+    return true;
 }
 
 int main()
@@ -671,15 +679,29 @@ int main()
 
     // return 0;
 
-    int num;
-    cout << "Enter a number to calculate its factorial: ";
-    cin >> num;
+    // int num;
+    // cout << "Enter a number to calculate its factorial: ";
+    // cin >> num;
 
-    if (num < 0) {
-        cout << "Factorial is not defined for negative numbers." << endl;
-    } else {
-        cout << "The factorial of " << num << " is " << factorial(num) << endl;
+    // if (num < 0) {
+    //     cout << "Factorial is not defined for negative numbers." << endl;
+    // } else {
+    //     cout << "The factorial of " << num << " is " << factorial(num) << endl;
+    // }
+
+    // return 0;
+
+    int start, end;
+    cout << "Enter the range (start and end): ";
+    cin >> start >> end;
+
+    cout << "Prime numbers between " << start << " and " << end << " are: " << endl;
+    for (int i = start; i <= end; i++) {
+        if (isPrime(i)) {
+            cout << i << " ";
+        }
     }
+    cout << endl;
 
     return 0;
 }
